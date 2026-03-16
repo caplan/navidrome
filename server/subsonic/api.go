@@ -149,6 +149,14 @@ func (api *Router) routes() http.Handler {
 		})
 		r.Group(func(r chi.Router) {
 			r.Use(getPlayer(api.players))
+			h(r, "getSpanTags", api.GetSpanTags)
+			h(r, "addSpanTag", api.AddSpanTag)
+			h(r, "getSpans", api.GetSpans)
+			h(r, "addSpan", api.AddSpan)
+			h(r, "deleteSpan", api.DeleteSpan)
+		})
+		r.Group(func(r chi.Router) {
+			r.Use(getPlayer(api.players))
 			h(r, "getBookmarks", api.GetBookmarks)
 			h(r, "createBookmark", api.CreateBookmark)
 			h(r, "deleteBookmark", api.DeleteBookmark)

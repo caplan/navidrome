@@ -247,6 +247,20 @@ func (db *MockDataStore) Plugin(ctx context.Context) model.PluginRepository {
 	return db.MockedPlugin
 }
 
+func (db *MockDataStore) SpanTag(ctx context.Context) model.SpanTagRepository {
+	if db.RealDS != nil {
+		return db.RealDS.SpanTag(ctx)
+	}
+	return struct{ model.SpanTagRepository }{}
+}
+
+func (db *MockDataStore) Span(ctx context.Context) model.SpanRepository {
+	if db.RealDS != nil {
+		return db.RealDS.Span(ctx)
+	}
+	return struct{ model.SpanRepository }{}
+}
+
 func (db *MockDataStore) WithTx(block func(tx model.DataStore) error, label ...string) error {
 	return block(db)
 }

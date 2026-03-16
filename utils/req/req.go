@@ -104,6 +104,18 @@ func (r *Values) Times(param string) ([]time.Time, error) {
 	return times, nil
 }
 
+func (r *Values) Float64(param string) (float64, error) {
+	v, err := r.String(param)
+	if err != nil {
+		return 0, err
+	}
+	value, err := strconv.ParseFloat(v, 64)
+	if err != nil {
+		return 0, fmt.Errorf("%w '%s': expected number, got '%s'", ErrInvalidParam, param, v)
+	}
+	return value, nil
+}
+
 func (r *Values) Int64(param string) (int64, error) {
 	v, err := r.String(param)
 	if err != nil {

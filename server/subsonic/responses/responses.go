@@ -62,6 +62,10 @@ type Subsonic struct {
 	LyricsList             *LyricsList             `xml:"lyricsList,omitempty"              json:"lyricsList,omitempty"`
 	PlayQueueByIndex       *PlayQueueByIndex       `xml:"playQueueByIndex,omitempty" json:"playQueueByIndex,omitempty"`
 	TranscodeDecision      *TranscodeDecision      `xml:"transcodeDecision,omitempty"       json:"transcodeDecision,omitempty"`
+
+	// Spans
+	SpanTags *SpanTags `xml:"spanTags,omitempty"  json:"spanTags,omitempty"`
+	Spans    *Spans    `xml:"spans,omitempty"     json:"spans,omitempty"`
 }
 
 const (
@@ -470,6 +474,31 @@ type Bookmark struct {
 
 type Bookmarks struct {
 	Bookmark []Bookmark `xml:"bookmark,omitempty"    json:"bookmark,omitempty"`
+}
+
+type SpanTag struct {
+	ID          string `xml:"id,attr"                        json:"id"`
+	Name        string `xml:"name,attr"                      json:"name"`
+	Description string `xml:"description,attr,omitempty"     json:"description,omitempty"`
+}
+
+type SpanTags struct {
+	SpanTag []SpanTag `xml:"spanTag,omitempty"              json:"spanTag,omitempty"`
+}
+
+type Span struct {
+	ID          string    `xml:"id,attr"                        json:"id"`
+	MediaFileID string    `xml:"mediaFileId,attr"               json:"mediaFileId"`
+	Name        string    `xml:"name,attr"                      json:"name"`
+	Position    float64   `xml:"position,attr"                  json:"position"`
+	EndPosition *float64  `xml:"endPosition,attr,omitempty"     json:"endPosition,omitempty"`
+	Tags        []SpanTag `xml:"tag,omitempty"                  json:"tags,omitempty"`
+	Created     time.Time `xml:"created,attr"                   json:"created"`
+	Changed     time.Time `xml:"changed,attr"                   json:"changed"`
+}
+
+type Spans struct {
+	Span []Span `xml:"span,omitempty"                     json:"span,omitempty"`
 }
 
 type Share struct {
