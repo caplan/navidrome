@@ -87,6 +87,8 @@ type MediaFile struct {
 	RGTrackGain          *float64 `structs:"rg_track_gain" json:"rgTrackGain"`
 	RGTrackPeak          *float64 `structs:"rg_track_peak" json:"rgTrackPeak"`
 
+	AcousticID string `structs:"acoustic_id" json:"acousticId,omitempty" hash:"ignore"` // Chromaprint acoustic fingerprint
+
 	Tags         Tags         `structs:"tags" json:"tags,omitempty" hash:"ignore"`       // All imported tags from the original file
 	Participants Participants `structs:"participants" json:"participants" hash:"ignore"` // All artists that participated in this track
 
@@ -432,6 +434,10 @@ type MediaFileRepository interface {
 	DeleteMissing(ids []string) error
 	DeleteAllMissing() (int64, error)
 	FindByPaths(paths []string) (MediaFiles, error)
+
+	// Acoustic ID methods
+	GetWithoutAcousticID(limit int) (MediaFiles, error)
+	SetAcousticID(id string, acousticID string) error
 
 	// The following methods are used exclusively by the scanner:
 	MarkMissing(bool, ...*MediaFile) error

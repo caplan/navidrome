@@ -11,6 +11,7 @@ import (
 	"github.com/go-chi/chi/v5/middleware"
 	"github.com/navidrome/navidrome/conf"
 	"github.com/navidrome/navidrome/consts"
+	"github.com/navidrome/navidrome/core/acousticid"
 	"github.com/navidrome/navidrome/db"
 	"github.com/navidrome/navidrome/log"
 	"github.com/navidrome/navidrome/model"
@@ -91,6 +92,7 @@ func runNavidrome(ctx context.Context) {
 	g.Go(scheduleDBOptimizer(ctx))
 	g.Go(startPluginManager(ctx))
 	g.Go(runInitialScan(ctx))
+	g.Go(scheduleAcousticIDProcessor(ctx))
 	if conf.Server.Scanner.Enabled {
 		g.Go(startScanWatcher(ctx))
 		g.Go(schedulePeriodicScan(ctx))
@@ -345,6 +347,46 @@ func startPluginManager(ctx context.Context) func() error {
 		}
 		log.Info(ctx, "Starting plugin manager")
 		return manager.Start(ctx)
+	}
+}
+
+// scheduleAcousticIDProcessor starts a periodic job that calculates acoustic IDs
+// (Chromaprint fingerprints) for songs that don't have one yet. It also runs once
+// at startup after a short delay to process any backlog.
+func scheduleAcousticIDProcessor(ctx context.Context) func() error {
+	return func() error {
+		ds := CreateDataStore()
+		calc := acousticid.NewCalculator(ds)
+
+		// Wait for initial scan to complete before starting
+		select {
+		case <-time.After(30 * time.Second):
+		case <-ctx.Done():
+			return nil
+		}
+
+		// Initial run to process backlog
+		log.Info(ctx, "Running initial acoustic ID processing")
+		if err := calc.RunUntilDone(ctx); err != nil && ctx.Err() == nil {
+			log.Error(ctx, "Error in initial acoustic ID processing", err)
+		}
+
+		// Schedule periodic runs
+		schedulerInstance := scheduler.GetInstance()
+		log.Info(ctx, "Scheduling acoustic ID processor", "schedule", acousticid.DefaultSchedule)
+		_, err := schedulerInstance.Add(acousticid.DefaultSchedule, func() {
+			if scanner.IsScanning() {
+				log.Debug(ctx, "Skipping acoustic ID processing because a scan is in progress")
+				return
+			}
+			if _, err := calc.ProcessBatch(ctx, acousticid.DefaultBatchSize); err != nil {
+				log.Error(ctx, "Error processing acoustic IDs", err)
+			}
+		})
+		if err != nil {
+			log.Error(ctx, "Error scheduling acoustic ID processor", err)
+		}
+		return nil
 	}
 }
 

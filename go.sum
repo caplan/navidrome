@@ -20,6 +20,8 @@ github.com/bmatcuk/doublestar/v4 v4.10.0 h1:zU9WiOla1YA122oLM6i4EXvGW62DvKZVxIe6
 github.com/bmatcuk/doublestar/v4 v4.10.0/go.mod h1:xBQ8jztBU6kakFMg+8WGxn0c6z1fTSPVIjEY1Wr7jzc=
 github.com/bradleyjkemp/cupaloy/v2 v2.8.0 h1:any4BmKE+jGIaMpnU8YgH/I2LPiLBufr6oMMlVBbn9M=
 github.com/bradleyjkemp/cupaloy/v2 v2.8.0/go.mod h1:bm7JXdkRd4BHJk9HpwqAI8BoAY1lps46Enkdqw6aRX0=
+github.com/caplan/music-visualizer/go v0.1.0 h1:uVFMgT8jF+ssMdna/yL1IHkr5/tejzeDgjqif3rI+LU=
+github.com/caplan/music-visualizer/go v0.1.0/go.mod h1:dEAVOvdMt8s7WmS39P6AjnQksTC/wcC8aWnMcHFNeXk=
 github.com/cespare/reflex v0.3.1 h1:N4Y/UmRrjwOkNT0oQQnYsdr6YBxvHqtSfPB4mqOyAKk=
 github.com/cespare/reflex v0.3.1/go.mod h1:I+0Pnu2W693i7Hv6ZZG76qHTY0mgUa7uCIfCtikXojE=
 github.com/cespare/xxhash/v2 v2.3.0 h1:UL815xU9SqsFlibzuggzjXhog7bL6oX9BbNZnL2UFvs=

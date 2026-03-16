@@ -310,5 +310,32 @@ func (m *MockMediaFileRepo) FindRecentFilesByProperties(missing model.MediaFile,
 	return result, nil
 }
 
+func (m *MockMediaFileRepo) GetWithoutAcousticID(limit int) (model.MediaFiles, error) {
+	if m.Err {
+		return nil, errors.New("error")
+	}
+	var res model.MediaFiles
+	for _, mf := range m.Data {
+		if mf.AcousticID == "" && !mf.Missing {
+			res = append(res, *mf)
+			if len(res) >= limit {
+				break
+			}
+		}
+	}
+	return res, nil
+}
+
+func (m *MockMediaFileRepo) SetAcousticID(id string, acousticID string) error {
+	if m.Err {
+		return errors.New("error")
+	}
+	if d, ok := m.Data[id]; ok {
+		d.AcousticID = acousticID
+		return nil
+	}
+	return model.ErrNotFound
+}
+
 var _ model.MediaFileRepository = (*MockMediaFileRepo)(nil)
 var _ model.ResourceRepository = (*MockMediaFileRepo)(nil)

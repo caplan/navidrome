@@ -168,6 +168,24 @@ func (r *mediaFileRepository) UpdateProbeData(id string, data string) error {
 	return err
 }
 
+func (r *mediaFileRepository) GetWithoutAcousticID(limit int) (model.MediaFiles, error) {
+	sq := r.selectMediaFile().Where(Or{Eq{"media_file.acoustic_id": ""}, Eq{"media_file.acoustic_id": nil}}).
+		Where(Eq{"media_file.missing": false}).
+		OrderBy("media_file.updated_at DESC").
+		Limit(uint64(limit))
+	var res dbMediaFiles
+	err := r.queryAll(sq, &res)
+	if err != nil {
+		return nil, err
+	}
+	return res.toModels(), nil
+}
+
+func (r *mediaFileRepository) SetAcousticID(id string, acousticID string) error {
+	_, err := r.executeSQL(Update(r.tableName).Set("acoustic_id", acousticID).Where(Eq{"id": id}))
+	return err
+}
+
 func (r *mediaFileRepository) selectMediaFile(options ...model.QueryOptions) SelectBuilder {
 	sql := r.newSelect(options...).Columns("media_file.*", "library.path as library_path", "library.name as library_name").
 		LeftJoin("library on media_file.library_id = library.id")
