@@ -19,6 +19,18 @@ Navidrome has two API layers:
 - Custom handlers return `http.HandlerFunc` closures
 - Routes mounted under `/api/`
 
+## Custom Endpoints
+
+### Spans
+- Native: `GET/POST /api/span-tag`, `GET/DELETE /api/span-tag/{id}`
+- Native: `POST /api/span`, `GET/PUT/DELETE /api/span/{id}`, `GET /api/song/{id}/spans`
+- Subsonic: `getSpanTags`, `addSpanTag`, `getSpans`, `addSpan`, `deleteSpan`
+
+### Visualizations
+- Native: `GET /api/song/{id}/visualizations` — JSON with availability per mode
+- Native: `GET /api/song/{id}/visualization/{mode}` — SVG download (mode: radio, blocky, ribbon, heatmap)
+- Subsonic: `getVisualizationStatus?id=<songId>` — availability with per-mode status
+
 ## Adding Endpoints
 
 ### Subsonic API

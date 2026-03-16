@@ -56,6 +56,8 @@ A share of the revenue helps fund the development of Navidrome at no additional 
  - **Compatible** with all Subsonic/Madsonic/Airsonic [clients](https://www.navidrome.org/docs/overview/#apps)
  - **Transcoding** on the fly. Can be set per user/player. **Opus encoding is supported**
  - **Spans**: user-specific markers in songs with positions, tags, and metadata persistence
+ - **Acoustic fingerprinting**: automatic Chromaprint fingerprint calculation for all songs
+ - **Song visualizations**: auto-generated SVG visualizations (radio, blocky, ribbon, heatmap) for every song
  - Translated to **various languages**
 
 ## Translations

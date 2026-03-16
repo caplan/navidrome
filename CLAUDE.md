@@ -18,6 +18,12 @@ make gen            # Run all code generation (Wire + plugin PDK)
 
 **Build tags**: `netgo,sqlite_fts5` (always required)
 
+**Manual build** (macOS ARM64):
+```bash
+make buildjs
+CGO_CFLAGS_ALLOW="--define-prefix" go build -tags "netgo,sqlite_fts5" -o navidrome .
+```
+
 ```bash
 make test                        # Run Go tests
 make test PKG=./server/subsonic  # Run tests for specific package
@@ -43,6 +49,8 @@ make format                      # Format code (goimports + prettier)
 | `server/nativeapi/` | Native REST API handlers |
 | `server/public/` | Public endpoints (shares) |
 | `core/` | Business logic services (artwork, streaming, playlists, etc.) |
+| `core/acousticid/` | Chromaprint acoustic fingerprint calculation |
+| `core/visualization/` | SVG visualization generation using songviz |
 | `scanner/` | Multi-phase library scanning pipeline |
 | `adapters/` | External service integrations (LastFM, Spotify, taglib) |
 | `plugins/` | WebAssembly plugin system (Extism) |
@@ -61,6 +69,7 @@ make format                      # Format code (goimports + prettier)
 - **Logging**: Context-aware via `log.Info(ctx, "msg", "key", val)`
 - **Error handling**: Sentinel errors in `model/errors.go` (`ErrNotFound`, `ErrNotAuthorized`, etc.)
 - **User context**: `request.UserFrom(ctx)` to get the logged-in user in repositories
+- **Background jobs**: `errgroup` goroutines in `cmd/root.go`, periodic tasks via `scheduler.GetInstance().Add()`
 
 ### Adding a New Feature (typical workflow)
 
@@ -74,6 +83,14 @@ make format                      # Format code (goimports + prettier)
 8. Add response types if needed in `server/subsonic/responses/`
 9. Run `make wire` if providers changed
 
+### Background Services
+
+Background jobs are started in `cmd/root.go` via `errgroup`. Each is a function returning `func() error`:
+
+- **Acoustic ID processor** (`core/acousticid/`): Calculates Chromaprint fingerprints using `fpcalc`. Runs at startup (30s delay) then every 5 minutes. Processes 50 files per batch.
+- **Visualization generator** (`core/visualization/`): Generates 4 SVG types per song using `songviz`. Runs at startup (60s delay) then every 5 minutes. Processes 10 files per batch. Keyed by SHA-256 hash of acoustic fingerprint — metadata changes don't trigger regeneration.
+- Both skip processing during active library scans.
+
 ### Commit Conventions
 
 ```
@@ -86,5 +103,17 @@ Types: `feat`, `fix`, `sec`, `docs`, `style`, `refactor`, `perf`, `test`, `build
 
 - The existing `model.Tag` / `model.TagRepository` is for **music metadata tags** (genre, mood, etc.), not user-facing tags
 - User-specific data (annotations, bookmarks, spans) uses the pattern of scoping queries by `user_id` from context
-- The `taglib` adapter may show `invalid flag in pkg-config` warnings on macOS - this is expected and non-fatal
+- The `taglib` adapter may show `invalid flag in pkg-config` warnings on macOS — this is expected and non-fatal
 - Always add DCO sign-off to commits: `git commit --signoff`
+- Private dependencies under `github.com/caplan/*` require `GOPRIVATE=github.com/caplan/*` (already set globally)
+
+### Configuration
+
+Key config options in `navidrome.toml`:
+
+| Option | Description |
+|--------|-------------|
+| `FFmpegPath` | Path to ffmpeg binary (used for transcoding, PCM decoding, metadata writing) |
+| `FpcalcPath` | Path to Chromaprint's fpcalc binary (for acoustic fingerprinting) |
+| `DataFolder` | Where DB, cache, and visualizations are stored |
+| `MusicFolder` | Path to the music library |

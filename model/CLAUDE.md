@@ -6,14 +6,22 @@ This package defines all data models and repository interfaces. Implementations 
 
 ## Key Types
 
-- `MediaFile` - A song/track (60+ fields including metadata, file info, annotations)
+- `MediaFile` - A song/track (60+ fields including metadata, file info, annotations, acoustic ID)
 - `Album`, `Artist` - Aggregated from MediaFile data during scanning
 - `Playlist` - User playlists with smart playlist support
 - `Span` - User-specific markers in songs with position and tags
-- `SpanTag` - Predefined tags attachable to spans
+- `SpanTag` - Predefined tags attachable to spans (name + description, stored in DB)
 - `Tag` - Music metadata tags (genre, mood, etc.) - different from SpanTag
 - `Annotations` - User-specific play counts, ratings, stars (embedded in Album/Artist/MediaFile)
 - `Bookmarkable` - User-specific position bookmarks
+
+## MediaFile Notable Fields
+
+- `AcousticID` - Chromaprint fingerprint, calculated in background by `core/acousticid/`
+- `Path` / `LibraryPath` - Use `mf.AbsolutePath()` to get the full filesystem path
+- `PID` - Persistent ID for tracking files across moves/renames
+- `Tags` - Raw imported metadata from the audio file
+- `Participants` - Structured artist data (replaces deprecated Artist/AlbumArtist fields)
 
 ## Conventions
 
