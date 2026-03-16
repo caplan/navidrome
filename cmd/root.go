@@ -12,6 +12,7 @@ import (
 	"github.com/navidrome/navidrome/conf"
 	"github.com/navidrome/navidrome/consts"
 	"github.com/navidrome/navidrome/core/acousticid"
+	"github.com/navidrome/navidrome/core/visualization"
 	"github.com/navidrome/navidrome/db"
 	"github.com/navidrome/navidrome/log"
 	"github.com/navidrome/navidrome/model"
@@ -93,6 +94,7 @@ func runNavidrome(ctx context.Context) {
 	g.Go(startPluginManager(ctx))
 	g.Go(runInitialScan(ctx))
 	g.Go(scheduleAcousticIDProcessor(ctx))
+	g.Go(scheduleVisualizationGenerator(ctx))
 	if conf.Server.Scanner.Enabled {
 		g.Go(startScanWatcher(ctx))
 		g.Go(schedulePeriodicScan(ctx))
@@ -385,6 +387,53 @@ func scheduleAcousticIDProcessor(ctx context.Context) func() error {
 		})
 		if err != nil {
 			log.Error(ctx, "Error scheduling acoustic ID processor", err)
+		}
+		return nil
+	}
+}
+
+// scheduleVisualizationGenerator starts a periodic job that generates SVG
+// visualizations for songs that have an acoustic ID. It also cleans up stale
+// visualizations when acoustic IDs change.
+func scheduleVisualizationGenerator(ctx context.Context) func() error {
+	return func() error {
+		ds := CreateDataStore()
+		gen := visualization.NewGenerator(ds)
+
+		// Wait for acoustic ID processing to get a head start
+		select {
+		case <-time.After(60 * time.Second):
+		case <-ctx.Done():
+			return nil
+		}
+
+		// Initial run
+		log.Info(ctx, "Running initial visualization generation")
+		if err := gen.CleanupStale(ctx); err != nil && ctx.Err() == nil {
+			log.Error(ctx, "Error cleaning stale visualizations", err)
+		}
+		if err := gen.ProcessAll(ctx); err != nil && ctx.Err() == nil {
+			log.Error(ctx, "Error in initial visualization generation", err)
+		}
+
+		// Schedule periodic runs
+		schedulerInstance := scheduler.GetInstance()
+		log.Info(ctx, "Scheduling visualization generator", "schedule", visualization.DefaultSchedule)
+		_, err := schedulerInstance.Add(visualization.DefaultSchedule, func() {
+			if scanner.IsScanning() {
+				log.Debug(ctx, "Skipping visualization generation because a scan is in progress")
+				return
+			}
+			// Clean up stale visualizations (acoustic ID changed)
+			if err := gen.CleanupStale(ctx); err != nil {
+				log.Error(ctx, "Error cleaning stale visualizations", err)
+			}
+			if _, err := gen.ProcessBatch(ctx, visualization.DefaultBatchSize); err != nil {
+				log.Error(ctx, "Error generating visualizations", err)
+			}
+		})
+		if err != nil {
+			log.Error(ctx, "Error scheduling visualization generator", err)
 		}
 		return nil
 	}

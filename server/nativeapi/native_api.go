@@ -83,6 +83,7 @@ func (api *Router) routes() http.Handler {
 		api.addMissingFilesRoute(r)
 		api.addSpanTagRoute(r)
 		api.addSpanRoute(r)
+		api.addVisualizationRoute(r)
 		api.addKeepAliveRoute(r)
 		api.addInsightsRoute(r)
 

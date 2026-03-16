@@ -66,6 +66,9 @@ type Subsonic struct {
 	// Spans
 	SpanTags *SpanTags `xml:"spanTags,omitempty"  json:"spanTags,omitempty"`
 	Spans    *Spans    `xml:"spans,omitempty"     json:"spans,omitempty"`
+
+	// Visualizations
+	VisualizationStatus *VisualizationStatus `xml:"visualizationStatus,omitempty" json:"visualizationStatus,omitempty"`
 }
 
 const (
@@ -499,6 +502,17 @@ type Span struct {
 
 type Spans struct {
 	Span []Span `xml:"span,omitempty"                     json:"span,omitempty"`
+}
+
+type VisualizationType struct {
+	Mode      string `xml:"mode,attr"                          json:"mode"`
+	Available bool   `xml:"available,attr"                     json:"available"`
+}
+
+type VisualizationStatus struct {
+	Available  bool                `xml:"available,attr"                     json:"available"`
+	AcousticID string              `xml:"acousticId,attr,omitempty"          json:"acousticId,omitempty"`
+	Types      []VisualizationType `xml:"type,omitempty"                     json:"types,omitempty"`
 }
 
 type Share struct {

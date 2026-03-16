@@ -154,6 +154,7 @@ func (api *Router) routes() http.Handler {
 			h(r, "getSpans", api.GetSpans)
 			h(r, "addSpan", api.AddSpan)
 			h(r, "deleteSpan", api.DeleteSpan)
+			h(r, "getVisualizationStatus", api.GetVisualizationStatus)
 		})
 		r.Group(func(r chi.Router) {
 			r.Use(getPlayer(api.players))
