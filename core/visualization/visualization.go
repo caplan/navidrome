@@ -3,7 +3,9 @@ package visualization
 import (
 	"bytes"
 	"context"
+	"crypto/sha256"
 	"encoding/binary"
+	"encoding/hex"
 	"fmt"
 	"math"
 	"os"
@@ -40,9 +42,9 @@ func NewGenerator(ds model.DataStore) *Generator {
 }
 
 // ProcessBatch finds songs that need visualization and generates SVGs.
-// A song needs visualization if it has an acoustic ID and either:
-//   - has no visualization directory, or
-//   - the acoustic ID changed (directory name doesn't match).
+// Visualizations are keyed by a hash of the acoustic fingerprint, so
+// metadata changes (title, artist, etc.) do not trigger regeneration.
+// Only a change in the actual audio content (new acoustic ID) will.
 //
 // Returns the number of songs processed.
 func (g *Generator) ProcessBatch(ctx context.Context, batchSize int) (int, error) {
@@ -57,6 +59,10 @@ func (g *Generator) ProcessBatch(ctx context.Context, batchSize int) (int, error
 		return 0, fmt.Errorf("querying media files: %w", err)
 	}
 
+	if len(mfs) == 0 {
+		return 0, nil
+	}
+
 	vizDir := visualizationDir()
 	processed := 0
 	for _, mf := range mfs {
@@ -67,21 +73,21 @@ func (g *Generator) ProcessBatch(ctx context.Context, batchSize int) (int, error
 			continue
 		}
 
-		songDir := filepath.Join(vizDir, mf.AcousticID)
+		dirName := hashAcousticID(mf.AcousticID)
+		songDir := filepath.Join(vizDir, dirName)
 
-		// Check if visualizations already exist for this acoustic ID
 		if allVisualizationsExist(songDir) {
 			continue
 		}
 
 		filePath := mf.AbsolutePath()
-		if err := generateVisualizations(ctx, filePath, mf.AcousticID, songDir); err != nil {
+		log.Info(ctx, "Generating visualizations", "id", mf.ID, "title", mf.Title, "hash", dirName)
+		if err := generateVisualizations(ctx, filePath, songDir); err != nil {
 			log.Warn(ctx, "Failed to generate visualizations", "id", mf.ID, "title", mf.Title, err)
 			continue
 		}
 
 		processed++
-		log.Debug(ctx, "Generated visualizations", "id", mf.ID, "title", mf.Title, "acousticId", mf.AcousticID)
 	}
 
 	if processed > 0 {
@@ -111,9 +117,9 @@ func (g *Generator) ProcessAll(ctx context.Context) error {
 	}
 }
 
-// CleanupStale removes visualization directories for acoustic IDs that are
-// no longer referenced by any media file. This handles the case where
-// an acoustic ID was recalculated.
+// CleanupStale removes visualization directories whose hash no longer
+// corresponds to any media file's acoustic ID. This handles the case
+// where a file's audio content changed and got a new acoustic ID.
 func (g *Generator) CleanupStale(ctx context.Context) error {
 	vizDir := visualizationDir()
 	entries, err := os.ReadDir(vizDir)
@@ -124,25 +130,35 @@ func (g *Generator) CleanupStale(ctx context.Context) error {
 		return err
 	}
 
+	// Build a set of all current hashes
+	activeHashes := make(map[string]bool)
+	offset := 0
+	for {
+		mfs, err := g.ds.MediaFile(ctx).GetAll(model.QueryOptions{
+			Filters: squirrel.NotEq{"media_file.acoustic_id": ""},
+			Max:     500,
+			Offset:  offset,
+		})
+		if err != nil {
+			return fmt.Errorf("querying acoustic IDs for cleanup: %w", err)
+		}
+		if len(mfs) == 0 {
+			break
+		}
+		for _, mf := range mfs {
+			activeHashes[hashAcousticID(mf.AcousticID)] = true
+		}
+		offset += len(mfs)
+	}
+
 	for _, entry := range entries {
 		if !entry.IsDir() {
 			continue
 		}
-		acousticID := entry.Name()
-
-		// Check if any media file still references this acoustic ID
-		mfs, err := g.ds.MediaFile(ctx).GetAll(model.QueryOptions{
-			Filters: squirrel.Eq{"media_file.acoustic_id": acousticID},
-			Max:     1,
-		})
-		if err != nil {
-			log.Warn(ctx, "Error checking acoustic ID references", "acousticId", acousticID, err)
-			continue
-		}
-
-		if len(mfs) == 0 {
-			dir := filepath.Join(vizDir, acousticID)
-			log.Info(ctx, "Removing stale visualizations", "acousticId", acousticID)
+		dirHash := entry.Name()
+		if !activeHashes[dirHash] {
+			dir := filepath.Join(vizDir, dirHash)
+			log.Info(ctx, "Removing stale visualizations", "hash", dirHash)
 			if err := os.RemoveAll(dir); err != nil {
 				log.Warn(ctx, "Failed to remove stale visualization dir", "dir", dir, err)
 			}
@@ -153,7 +169,14 @@ func (g *Generator) CleanupStale(ctx context.Context) error {
 
 // GetVisualizationPath returns the path to a specific visualization SVG.
 func GetVisualizationPath(acousticID, mode string) string {
-	return filepath.Join(visualizationDir(), acousticID, mode+".svg")
+	return filepath.Join(visualizationDir(), hashAcousticID(acousticID), mode+".svg")
+}
+
+// hashAcousticID returns a short, filesystem-safe hash of the acoustic fingerprint.
+// Acoustic fingerprints can be 1000+ chars, exceeding filesystem name limits.
+func hashAcousticID(acousticID string) string {
+	h := sha256.Sum256([]byte(acousticID))
+	return hex.EncodeToString(h[:])
 }
 
 func visualizationDir() string {
@@ -170,22 +193,18 @@ func allVisualizationsExist(dir string) bool {
 	return true
 }
 
-func generateVisualizations(ctx context.Context, audioPath, acousticID, outputDir string) error {
-	// Decode audio to raw PCM via ffmpeg
+func generateVisualizations(ctx context.Context, audioPath, outputDir string) error {
 	pcm, err := decodeToPCM(ctx, audioPath)
 	if err != nil {
 		return fmt.Errorf("decoding audio: %w", err)
 	}
 
-	// Analyze with songviz
 	analysis := songviz.Analyze(pcm, songviz.DefaultConfig())
 
-	// Create output directory
 	if err := os.MkdirAll(outputDir, 0755); err != nil {
 		return fmt.Errorf("creating visualization dir: %w", err)
 	}
 
-	// Render each mode
 	for _, mode := range Modes {
 		svg := songviz.Render(analysis, svgSize, nil, mode)
 		outPath := filepath.Join(outputDir, mode+".svg")
@@ -204,14 +223,13 @@ func decodeToPCM(ctx context.Context, audioPath string) (songviz.PcmData, error)
 		ffmpegPath = "ffmpeg"
 	}
 
-	// Decode to mono float32 PCM at 22050 Hz
 	sampleRate := 22050
 	cmd := exec.CommandContext(ctx, ffmpegPath,
 		"-i", audioPath,
-		"-ac", "1", // mono
-		"-ar", fmt.Sprintf("%d", sampleRate), // sample rate
-		"-f", "f32le", // 32-bit float little-endian
-		"-", // output to stdout
+		"-ac", "1",
+		"-ar", fmt.Sprintf("%d", sampleRate),
+		"-f", "f32le",
+		"-",
 	)
 
 	var stdout, stderr bytes.Buffer
@@ -227,7 +245,6 @@ func decodeToPCM(ctx context.Context, audioPath string) (songviz.PcmData, error)
 		return songviz.PcmData{}, fmt.Errorf("ffmpeg produced no audio data for %s", audioPath)
 	}
 
-	// Convert raw bytes to float32 samples
 	samples := make([]float32, len(raw)/4)
 	for i := range samples {
 		bits := binary.LittleEndian.Uint32(raw[i*4 : (i+1)*4])
