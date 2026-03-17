@@ -4,8 +4,8 @@ import (
 	"context"
 	"time"
 
-	"github.com/navidrome/navidrome/model"
-	"github.com/navidrome/navidrome/model/request"
+	"github.com/caplan/navidrome/model"
+	"github.com/caplan/navidrome/model/request"
 )
 
 type MockScrobbleRepo struct {

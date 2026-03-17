@@ -5,8 +5,8 @@ import (
 	"time"
 
 	"github.com/jellydator/ttlcache/v3"
-	"github.com/navidrome/navidrome/log"
-	"github.com/navidrome/navidrome/plugins/host"
+	"github.com/caplan/navidrome/log"
+	"github.com/caplan/navidrome/plugins/host"
 )
 
 const (

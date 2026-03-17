@@ -3,11 +3,11 @@ package subsonic
 import (
 	"net/http"
 
-	"github.com/navidrome/navidrome/model"
-	"github.com/navidrome/navidrome/server/nativeapi"
-	"github.com/navidrome/navidrome/server/subsonic/responses"
-	"github.com/navidrome/navidrome/utils/req"
-	"github.com/navidrome/navidrome/utils/slice"
+	"github.com/caplan/navidrome/model"
+	"github.com/caplan/navidrome/server/nativeapi"
+	"github.com/caplan/navidrome/server/subsonic/responses"
+	"github.com/caplan/navidrome/utils/req"
+	"github.com/caplan/navidrome/utils/slice"
 )
 
 func (api *Router) GetSpanTags(r *http.Request) (*responses.Subsonic, error) {

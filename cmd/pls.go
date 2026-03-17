@@ -10,8 +10,8 @@ import (
 	"strconv"
 
 	"github.com/Masterminds/squirrel"
-	"github.com/navidrome/navidrome/log"
-	"github.com/navidrome/navidrome/model"
+	"github.com/caplan/navidrome/log"
+	"github.com/caplan/navidrome/model"
 	"github.com/spf13/cobra"
 )
 

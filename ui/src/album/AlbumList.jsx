@@ -192,7 +192,7 @@ const AlbumList = (props) => {
     .replace(/^\//, '')
 
   // Workaround to force album columns to appear the first time.
-  // See https://github.com/navidrome/navidrome/pull/923#issuecomment-833004842
+  // See https://github.com/caplan/navidrome/pull/923#issuecomment-833004842
   // TODO: Find a better solution
   useSetToggleableFields(
     'album',

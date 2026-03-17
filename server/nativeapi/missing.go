@@ -8,10 +8,10 @@ import (
 
 	"github.com/Masterminds/squirrel"
 	"github.com/deluan/rest"
-	"github.com/navidrome/navidrome/core"
-	"github.com/navidrome/navidrome/log"
-	"github.com/navidrome/navidrome/model"
-	"github.com/navidrome/navidrome/utils/req"
+	"github.com/caplan/navidrome/core"
+	"github.com/caplan/navidrome/log"
+	"github.com/caplan/navidrome/model"
+	"github.com/caplan/navidrome/utils/req"
 )
 
 type missingRepository struct {

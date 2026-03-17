@@ -8,9 +8,9 @@ import (
 	"time"
 
 	. "github.com/Masterminds/squirrel"
-	"github.com/navidrome/navidrome/conf"
-	"github.com/navidrome/navidrome/consts"
-	"github.com/navidrome/navidrome/log"
+	"github.com/caplan/navidrome/conf"
+	"github.com/caplan/navidrome/consts"
+	"github.com/caplan/navidrome/log"
 )
 
 const annotationTable = "annotation"

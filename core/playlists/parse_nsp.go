@@ -10,9 +10,9 @@ import (
 	"path/filepath"
 
 	"github.com/RaveNoX/go-jsoncommentstrip"
-	"github.com/navidrome/navidrome/conf"
-	"github.com/navidrome/navidrome/model"
-	"github.com/navidrome/navidrome/model/criteria"
+	"github.com/caplan/navidrome/conf"
+	"github.com/caplan/navidrome/model"
+	"github.com/caplan/navidrome/model/criteria"
 )
 
 func (s *playlists) newSyncedPlaylist(baseDir string, playlistFile string) (*model.Playlist, error) {

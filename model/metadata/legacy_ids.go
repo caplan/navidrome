@@ -6,9 +6,9 @@ import (
 	"fmt"
 	"strings"
 
-	"github.com/navidrome/navidrome/conf"
-	"github.com/navidrome/navidrome/consts"
-	"github.com/navidrome/navidrome/model"
+	"github.com/caplan/navidrome/conf"
+	"github.com/caplan/navidrome/consts"
+	"github.com/caplan/navidrome/model"
 )
 
 // These are the legacy ID functions that were used in the original Navidrome ID generation.

@@ -8,15 +8,15 @@ import (
 	"strings"
 	"time"
 
-	"github.com/navidrome/navidrome/conf"
-	"github.com/navidrome/navidrome/consts"
-	"github.com/navidrome/navidrome/log"
-	"github.com/navidrome/navidrome/model"
-	"github.com/navidrome/navidrome/resources"
-	"github.com/navidrome/navidrome/server/subsonic/filter"
-	"github.com/navidrome/navidrome/server/subsonic/responses"
-	"github.com/navidrome/navidrome/utils/gravatar"
-	"github.com/navidrome/navidrome/utils/req"
+	"github.com/caplan/navidrome/conf"
+	"github.com/caplan/navidrome/consts"
+	"github.com/caplan/navidrome/log"
+	"github.com/caplan/navidrome/model"
+	"github.com/caplan/navidrome/resources"
+	"github.com/caplan/navidrome/server/subsonic/filter"
+	"github.com/caplan/navidrome/server/subsonic/responses"
+	"github.com/caplan/navidrome/utils/gravatar"
+	"github.com/caplan/navidrome/utils/req"
 )
 
 func (api *Router) GetAvatar(w http.ResponseWriter, r *http.Request) (*responses.Subsonic, error) {

@@ -1,6 +1,6 @@
 package tests
 
-import "github.com/navidrome/navidrome/model"
+import "github.com/caplan/navidrome/model"
 
 type MockTranscodingRepo struct {
 	model.TranscodingRepository

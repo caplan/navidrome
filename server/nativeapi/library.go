@@ -7,9 +7,9 @@ import (
 	"net/http"
 
 	"github.com/go-chi/chi/v5"
-	"github.com/navidrome/navidrome/core"
-	"github.com/navidrome/navidrome/log"
-	"github.com/navidrome/navidrome/model"
+	"github.com/caplan/navidrome/core"
+	"github.com/caplan/navidrome/log"
+	"github.com/caplan/navidrome/model"
 )
 
 // User-library association endpoints (admin only)

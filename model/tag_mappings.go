@@ -8,11 +8,11 @@ import (
 	"strings"
 	"sync"
 
-	"github.com/navidrome/navidrome/conf"
-	"github.com/navidrome/navidrome/consts"
-	"github.com/navidrome/navidrome/log"
-	"github.com/navidrome/navidrome/model/criteria"
-	"github.com/navidrome/navidrome/resources"
+	"github.com/caplan/navidrome/conf"
+	"github.com/caplan/navidrome/consts"
+	"github.com/caplan/navidrome/log"
+	"github.com/caplan/navidrome/model/criteria"
+	"github.com/caplan/navidrome/resources"
 	"gopkg.in/yaml.v3"
 )
 

@@ -7,14 +7,14 @@ import (
 	"sync"
 	"time"
 
-	"github.com/navidrome/navidrome/conf"
-	"github.com/navidrome/navidrome/consts"
-	"github.com/navidrome/navidrome/log"
-	"github.com/navidrome/navidrome/model"
-	"github.com/navidrome/navidrome/model/request"
-	"github.com/navidrome/navidrome/server/events"
-	"github.com/navidrome/navidrome/utils/cache"
-	"github.com/navidrome/navidrome/utils/singleton"
+	"github.com/caplan/navidrome/conf"
+	"github.com/caplan/navidrome/consts"
+	"github.com/caplan/navidrome/log"
+	"github.com/caplan/navidrome/model"
+	"github.com/caplan/navidrome/model/request"
+	"github.com/caplan/navidrome/server/events"
+	"github.com/caplan/navidrome/utils/cache"
+	"github.com/caplan/navidrome/utils/singleton"
 )
 
 type NowPlayingInfo struct {

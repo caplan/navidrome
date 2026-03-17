@@ -7,11 +7,11 @@ import (
 	"net/http"
 	"time"
 
-	"github.com/navidrome/navidrome/core/artwork"
-	"github.com/navidrome/navidrome/core/auth"
-	"github.com/navidrome/navidrome/log"
-	"github.com/navidrome/navidrome/model"
-	"github.com/navidrome/navidrome/utils/req"
+	"github.com/caplan/navidrome/core/artwork"
+	"github.com/caplan/navidrome/core/auth"
+	"github.com/caplan/navidrome/log"
+	"github.com/caplan/navidrome/model"
+	"github.com/caplan/navidrome/utils/req"
 )
 
 func (pub *Router) handleImages(w http.ResponseWriter, r *http.Request) {

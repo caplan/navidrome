@@ -7,10 +7,10 @@ import (
 	"slices"
 
 	"github.com/go-chi/chi/v5"
-	"github.com/navidrome/navidrome/core/visualization"
-	"github.com/navidrome/navidrome/log"
-	"github.com/navidrome/navidrome/model"
-	"github.com/navidrome/navidrome/server"
+	"github.com/caplan/navidrome/core/visualization"
+	"github.com/caplan/navidrome/log"
+	"github.com/caplan/navidrome/model"
+	"github.com/caplan/navidrome/server"
 )
 
 func (api *Router) addVisualizationRoute(r chi.Router) {

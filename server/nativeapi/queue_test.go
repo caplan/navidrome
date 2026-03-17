@@ -6,10 +6,10 @@ import (
 	"net/http"
 	"net/http/httptest"
 
-	"github.com/navidrome/navidrome/model"
-	"github.com/navidrome/navidrome/model/request"
-	"github.com/navidrome/navidrome/tests"
-	"github.com/navidrome/navidrome/utils/gg"
+	"github.com/caplan/navidrome/model"
+	"github.com/caplan/navidrome/model/request"
+	"github.com/caplan/navidrome/tests"
+	"github.com/caplan/navidrome/utils/gg"
 	. "github.com/onsi/ginkgo/v2"
 	. "github.com/onsi/gomega"
 )

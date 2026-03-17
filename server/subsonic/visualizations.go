@@ -4,9 +4,9 @@ import (
 	"net/http"
 	"os"
 
-	"github.com/navidrome/navidrome/core/visualization"
-	"github.com/navidrome/navidrome/server/subsonic/responses"
-	"github.com/navidrome/navidrome/utils/req"
+	"github.com/caplan/navidrome/core/visualization"
+	"github.com/caplan/navidrome/server/subsonic/responses"
+	"github.com/caplan/navidrome/utils/req"
 )
 
 func (api *Router) GetVisualizationStatus(r *http.Request) (*responses.Subsonic, error) {

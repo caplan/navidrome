@@ -3,7 +3,7 @@ package e2e
 import (
 	"net/http"
 
-	"github.com/navidrome/navidrome/conf"
+	"github.com/caplan/navidrome/conf"
 	. "github.com/onsi/ginkgo/v2"
 	. "github.com/onsi/gomega"
 )

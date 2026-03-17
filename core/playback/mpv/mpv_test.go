@@ -11,9 +11,9 @@ import (
 	"sync"
 	"time"
 
-	"github.com/navidrome/navidrome/conf"
-	"github.com/navidrome/navidrome/conf/configtest"
-	"github.com/navidrome/navidrome/model"
+	"github.com/caplan/navidrome/conf"
+	"github.com/caplan/navidrome/conf/configtest"
+	"github.com/caplan/navidrome/model"
 	. "github.com/onsi/ginkgo/v2"
 	. "github.com/onsi/gomega"
 )

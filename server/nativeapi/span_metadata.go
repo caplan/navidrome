@@ -6,8 +6,8 @@ import (
 	"os/exec"
 	"path/filepath"
 
-	"github.com/navidrome/navidrome/conf"
-	"github.com/navidrome/navidrome/log"
+	"github.com/caplan/navidrome/conf"
+	"github.com/caplan/navidrome/log"
 )
 
 // writeMetadataTag writes a custom metadata tag to an audio file using ffmpeg.

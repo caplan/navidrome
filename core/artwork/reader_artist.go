@@ -13,12 +13,12 @@ import (
 	"time"
 
 	"github.com/Masterminds/squirrel"
-	"github.com/navidrome/navidrome/conf"
-	"github.com/navidrome/navidrome/core"
-	"github.com/navidrome/navidrome/core/external"
-	"github.com/navidrome/navidrome/log"
-	"github.com/navidrome/navidrome/model"
-	"github.com/navidrome/navidrome/utils/str"
+	"github.com/caplan/navidrome/conf"
+	"github.com/caplan/navidrome/core"
+	"github.com/caplan/navidrome/core/external"
+	"github.com/caplan/navidrome/log"
+	"github.com/caplan/navidrome/model"
+	"github.com/caplan/navidrome/utils/str"
 )
 
 const (

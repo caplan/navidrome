@@ -7,8 +7,8 @@ import (
 	"strconv"
 	"strings"
 
-	"github.com/navidrome/navidrome/log"
-	"github.com/navidrome/navidrome/utils/str"
+	"github.com/caplan/navidrome/log"
+	"github.com/caplan/navidrome/utils/str"
 )
 
 type Line struct {

@@ -65,7 +65,7 @@ nfpms:
 
     contents:
       - src: release/linux/navidrome.toml
-        dst: /etc/navidrome/navidrome.toml
+        dst: /etc/caplan/navidrome.toml
         type: "config|noreplace"
         file_info:
           mode: 0644
@@ -102,7 +102,7 @@ release:
   draft: true
   mode: append
   footer: |
-    **Full Changelog**: https://github.com/navidrome/navidrome/compare/{{ .PreviousTag }}...{{ .Tag }}
+    **Full Changelog**: https://github.com/caplan/navidrome/compare/{{ .PreviousTag }}...{{ .Tag }}
 
     ## Helping out
 

@@ -16,16 +16,16 @@ import (
 
 	"github.com/Masterminds/squirrel"
 	"github.com/google/uuid"
-	"github.com/navidrome/navidrome/conf"
-	"github.com/navidrome/navidrome/consts"
-	"github.com/navidrome/navidrome/core/auth"
-	"github.com/navidrome/navidrome/core/metrics/insights"
-	"github.com/navidrome/navidrome/log"
-	"github.com/navidrome/navidrome/model"
-	"github.com/navidrome/navidrome/model/request"
-	"github.com/navidrome/navidrome/plugins"
-	"github.com/navidrome/navidrome/server/events"
-	"github.com/navidrome/navidrome/utils/singleton"
+	"github.com/caplan/navidrome/conf"
+	"github.com/caplan/navidrome/consts"
+	"github.com/caplan/navidrome/core/auth"
+	"github.com/caplan/navidrome/core/metrics/insights"
+	"github.com/caplan/navidrome/log"
+	"github.com/caplan/navidrome/model"
+	"github.com/caplan/navidrome/model/request"
+	"github.com/caplan/navidrome/plugins"
+	"github.com/caplan/navidrome/server/events"
+	"github.com/caplan/navidrome/utils/singleton"
 )
 
 type Insights interface {

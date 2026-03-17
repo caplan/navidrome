@@ -5,13 +5,13 @@ import (
 	"fmt"
 	"time"
 
-	"github.com/navidrome/navidrome/conf"
-	"github.com/navidrome/navidrome/consts"
-	"github.com/navidrome/navidrome/log"
-	"github.com/navidrome/navidrome/model"
-	"github.com/navidrome/navidrome/model/id"
-	"github.com/navidrome/navidrome/model/request"
-	"github.com/navidrome/navidrome/utils"
+	"github.com/caplan/navidrome/conf"
+	"github.com/caplan/navidrome/consts"
+	"github.com/caplan/navidrome/log"
+	"github.com/caplan/navidrome/model"
+	"github.com/caplan/navidrome/model/id"
+	"github.com/caplan/navidrome/model/request"
+	"github.com/caplan/navidrome/utils"
 )
 
 type Players interface {

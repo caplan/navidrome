@@ -9,10 +9,10 @@ import (
 	"os"
 	"time"
 
-	"github.com/navidrome/navidrome/conf"
-	"github.com/navidrome/navidrome/conf/configtest"
-	"github.com/navidrome/navidrome/core/agents"
-	"github.com/navidrome/navidrome/tests"
+	"github.com/caplan/navidrome/conf"
+	"github.com/caplan/navidrome/conf/configtest"
+	"github.com/caplan/navidrome/core/agents"
+	"github.com/caplan/navidrome/tests"
 	. "github.com/onsi/ginkgo/v2"
 	. "github.com/onsi/gomega"
 )

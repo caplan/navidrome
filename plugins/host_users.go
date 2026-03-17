@@ -3,9 +3,9 @@ package plugins
 import (
 	"context"
 
-	"github.com/navidrome/navidrome/model"
-	"github.com/navidrome/navidrome/plugins/host"
-	"github.com/navidrome/navidrome/utils/slice"
+	"github.com/caplan/navidrome/model"
+	"github.com/caplan/navidrome/plugins/host"
+	"github.com/caplan/navidrome/utils/slice"
 )
 
 type usersServiceImpl struct {

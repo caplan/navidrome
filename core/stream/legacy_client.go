@@ -4,9 +4,9 @@ import (
 	"context"
 	"strings"
 
-	"github.com/navidrome/navidrome/conf"
-	"github.com/navidrome/navidrome/log"
-	"github.com/navidrome/navidrome/model"
+	"github.com/caplan/navidrome/conf"
+	"github.com/caplan/navidrome/log"
+	"github.com/caplan/navidrome/model"
 )
 
 // buildLegacyClientInfo translates legacy Subsonic stream/download parameters

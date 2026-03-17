@@ -20,10 +20,10 @@ import (
 	"strings"
 	"time"
 
-	"github.com/navidrome/navidrome/conf"
-	"github.com/navidrome/navidrome/core/storage/local"
-	"github.com/navidrome/navidrome/log"
-	"github.com/navidrome/navidrome/model/metadata"
+	"github.com/caplan/navidrome/conf"
+	"github.com/caplan/navidrome/core/storage/local"
+	"github.com/caplan/navidrome/log"
+	"github.com/caplan/navidrome/model/metadata"
 	"go.senan.xyz/taglib"
 )
 

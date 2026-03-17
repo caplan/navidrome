@@ -10,10 +10,10 @@ import (
 	"strings"
 
 	"github.com/Masterminds/squirrel"
-	"github.com/navidrome/navidrome/core/stream"
-	"github.com/navidrome/navidrome/log"
-	"github.com/navidrome/navidrome/model"
-	"github.com/navidrome/navidrome/utils/slice"
+	"github.com/caplan/navidrome/core/stream"
+	"github.com/caplan/navidrome/log"
+	"github.com/caplan/navidrome/model"
+	"github.com/caplan/navidrome/utils/slice"
 )
 
 type Archiver interface {

@@ -4,9 +4,9 @@ import (
 	"time"
 
 	. "github.com/Masterminds/squirrel"
-	"github.com/navidrome/navidrome/conf"
-	"github.com/navidrome/navidrome/model"
-	"github.com/navidrome/navidrome/persistence"
+	"github.com/caplan/navidrome/conf"
+	"github.com/caplan/navidrome/model"
+	"github.com/caplan/navidrome/persistence"
 )
 
 type Options = model.QueryOptions

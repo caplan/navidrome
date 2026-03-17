@@ -11,10 +11,10 @@ import (
 
 	"github.com/bmatcuk/doublestar/v4"
 	"github.com/deluan/rest"
-	"github.com/navidrome/navidrome/conf"
-	"github.com/navidrome/navidrome/log"
-	"github.com/navidrome/navidrome/model"
-	"github.com/navidrome/navidrome/model/request"
+	"github.com/caplan/navidrome/conf"
+	"github.com/caplan/navidrome/log"
+	"github.com/caplan/navidrome/model"
+	"github.com/caplan/navidrome/model/request"
 )
 
 type Playlists interface {

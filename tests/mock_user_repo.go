@@ -6,8 +6,8 @@ import (
 	"strings"
 	"time"
 
-	"github.com/navidrome/navidrome/model"
-	"github.com/navidrome/navidrome/utils/gg"
+	"github.com/caplan/navidrome/model"
+	"github.com/caplan/navidrome/utils/gg"
 )
 
 func CreateMockUserRepo() *MockedUserRepo {

@@ -730,9 +730,9 @@ var _ = Describe("Generator", func() {
 			codeStr := string(code)
 
 			// Check for module declaration (consolidated PDK path at pdk/go level)
-			Expect(codeStr).To(ContainSubstring("module github.com/navidrome/navidrome/plugins/pdk/go"))
+			Expect(codeStr).To(ContainSubstring("module github.com/caplan/navidrome/plugins/pdk/go"))
 			// Ensure it's not the old host-specific path
-			Expect(codeStr).NotTo(ContainSubstring("module github.com/navidrome/navidrome/plugins/pdk/go/host"))
+			Expect(codeStr).NotTo(ContainSubstring("module github.com/caplan/navidrome/plugins/pdk/go/host"))
 
 			// Check for Go version
 			Expect(codeStr).To(ContainSubstring("go 1.25"))
@@ -833,7 +833,7 @@ var _ = Describe("Generator", func() {
 			Expect(codeStr).To(ContainSubstring("//go:wasmimport extism:host/user"))
 
 			// Check for PDK import
-			Expect(codeStr).To(ContainSubstring("github.com/navidrome/navidrome/plugins/pdk/go/pdk"))
+			Expect(codeStr).To(ContainSubstring("github.com/caplan/navidrome/plugins/pdk/go/pdk"))
 		})
 
 	})

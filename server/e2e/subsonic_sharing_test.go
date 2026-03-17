@@ -2,9 +2,9 @@ package e2e
 
 import (
 	"github.com/Masterminds/squirrel"
-	"github.com/navidrome/navidrome/conf"
-	"github.com/navidrome/navidrome/model"
-	"github.com/navidrome/navidrome/server/subsonic/responses"
+	"github.com/caplan/navidrome/conf"
+	"github.com/caplan/navidrome/model"
+	"github.com/caplan/navidrome/server/subsonic/responses"
 	. "github.com/onsi/ginkgo/v2"
 	. "github.com/onsi/gomega"
 )

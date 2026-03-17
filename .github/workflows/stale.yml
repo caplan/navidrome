@@ -47,7 +47,7 @@ jobs:
           stale-pr-message: This PR has been automatically marked as stale because it has not had
             recent activity. The resources of the Navidrome team are limited, and so we are asking for your help.
 
-            Please check https://github.com/navidrome/navidrome/blob/master/CONTRIBUTING.md#pull-requests and verify that this code contribution fits with the description. If yes, tell it in a comment.
+            Please check https://github.com/caplan/navidrome/blob/master/CONTRIBUTING.md#pull-requests and verify that this code contribution fits with the description. If yes, tell it in a comment.
 
             This PR will automatically be closed in the near future if no further activity occurs. Thank you for all your contributions.
           stale-issue-label: 'stale'

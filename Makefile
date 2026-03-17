@@ -145,14 +145,14 @@ setup-git: ##@Development Setup Git hooks (pre-commit and pre-push)
 .PHONY: setup-git
 
 build: check_go_env buildjs ##@Build Build the project
-	go build -ldflags="-X github.com/navidrome/navidrome/consts.gitSha=$(GIT_SHA) -X github.com/navidrome/navidrome/consts.gitTag=$(GIT_TAG)" -tags=$(GO_BUILD_TAGS)
+	go build -ldflags="-X github.com/caplan/navidrome/consts.gitSha=$(GIT_SHA) -X github.com/caplan/navidrome/consts.gitTag=$(GIT_TAG)" -tags=$(GO_BUILD_TAGS)
 .PHONY: build
 
 buildall: deprecated build
 .PHONY: buildall
 
 debug-build: check_go_env buildjs ##@Build Build the project (with remote debug on)
-	go build -gcflags="all=-N -l" -ldflags="-X github.com/navidrome/navidrome/consts.gitSha=$(GIT_SHA) -X github.com/navidrome/navidrome/consts.gitTag=$(GIT_TAG)" -tags=$(GO_BUILD_TAGS)
+	go build -gcflags="all=-N -l" -ldflags="-X github.com/caplan/navidrome/consts.gitSha=$(GIT_SHA) -X github.com/caplan/navidrome/consts.gitTag=$(GIT_TAG)" -tags=$(GO_BUILD_TAGS)
 .PHONY: debug-build
 
 buildjs: check_node_env ui/build/index.html ##@Build Build only frontend

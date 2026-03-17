@@ -6,9 +6,9 @@ import (
 	"fmt"
 	"sync"
 
-	"github.com/navidrome/navidrome/core/playback/mpv"
-	"github.com/navidrome/navidrome/log"
-	"github.com/navidrome/navidrome/model"
+	"github.com/caplan/navidrome/core/playback/mpv"
+	"github.com/caplan/navidrome/log"
+	"github.com/caplan/navidrome/model"
 )
 
 type Track interface {

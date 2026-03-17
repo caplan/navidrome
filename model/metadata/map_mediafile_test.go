@@ -5,10 +5,10 @@ import (
 	"os"
 	"sort"
 
-	"github.com/navidrome/navidrome/model"
-	"github.com/navidrome/navidrome/model/metadata"
-	"github.com/navidrome/navidrome/tests"
-	. "github.com/navidrome/navidrome/utils/gg"
+	"github.com/caplan/navidrome/model"
+	"github.com/caplan/navidrome/model/metadata"
+	"github.com/caplan/navidrome/tests"
+	. "github.com/caplan/navidrome/utils/gg"
 	. "github.com/onsi/ginkgo/v2"
 	. "github.com/onsi/gomega"
 )

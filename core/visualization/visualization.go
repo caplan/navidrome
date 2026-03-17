@@ -18,9 +18,9 @@ import (
 
 	"github.com/Masterminds/squirrel"
 	"github.com/caplan/music-visualizer/go/songviz"
-	"github.com/navidrome/navidrome/conf"
-	"github.com/navidrome/navidrome/log"
-	"github.com/navidrome/navidrome/model"
+	"github.com/caplan/navidrome/conf"
+	"github.com/caplan/navidrome/log"
+	"github.com/caplan/navidrome/model"
 )
 
 // Modes is the set of visualization types generated for each song.

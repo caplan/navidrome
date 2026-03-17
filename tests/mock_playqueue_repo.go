@@ -3,7 +3,7 @@ package tests
 import (
 	"errors"
 
-	"github.com/navidrome/navidrome/model"
+	"github.com/caplan/navidrome/model"
 )
 
 type MockPlayQueueRepo struct {

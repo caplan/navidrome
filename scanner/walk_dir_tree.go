@@ -9,10 +9,10 @@ import (
 	"sort"
 	"strings"
 
-	"github.com/navidrome/navidrome/conf"
-	"github.com/navidrome/navidrome/log"
-	"github.com/navidrome/navidrome/model"
-	"github.com/navidrome/navidrome/utils"
+	"github.com/caplan/navidrome/conf"
+	"github.com/caplan/navidrome/log"
+	"github.com/caplan/navidrome/model"
+	"github.com/caplan/navidrome/utils"
 )
 
 // walkDirTree recursively walks the directory tree starting from the given targetFolders.
@@ -164,7 +164,7 @@ func loadDir(ctx context.Context, job *scanJob, dirPath string, checker *IgnoreC
 // fullReadDir reads all files in the folder, skipping the ones with errors.
 // It also detects when it is "stuck" with an error in the same directory over and over.
 // In this case, it stops and returns whatever it was able to read until it got stuck.
-// See discussion here: https://github.com/navidrome/navidrome/issues/1164#issuecomment-881922850
+// See discussion here: https://github.com/caplan/navidrome/issues/1164#issuecomment-881922850
 func fullReadDir(ctx context.Context, dir fs.ReadDirFile) []fs.DirEntry {
 	var allEntries []fs.DirEntry
 	var prevErrStr = ""

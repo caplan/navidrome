@@ -13,9 +13,9 @@ import (
 	"strings"
 	"sync"
 
-	"github.com/navidrome/navidrome/conf"
-	"github.com/navidrome/navidrome/consts"
-	"github.com/navidrome/navidrome/log"
+	"github.com/caplan/navidrome/conf"
+	"github.com/caplan/navidrome/consts"
+	"github.com/caplan/navidrome/log"
 )
 
 // TranscodeOptions contains all parameters for a transcoding operation.

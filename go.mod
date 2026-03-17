@@ -1,4 +1,4 @@
-module github.com/navidrome/navidrome
+module github.com/caplan/navidrome
 
 go 1.25.0
 

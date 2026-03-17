@@ -265,7 +265,7 @@ On success, return `0`. On failure, use `pdk.SetError()` with one of these error
 - `scrobbler(unrecoverable)` – Permanent failure, scrobble discarded
 
 ```go
-import "github.com/navidrome/navidrome/plugins/pdk/go/scrobbler"
+import "github.com/caplan/navidrome/plugins/pdk/go/scrobbler"
 
 // Return error using predefined constants
 return scrobbler.ScrobblerErrorNotAuthorized
@@ -368,14 +368,14 @@ func ndSchedulerCallback() int32 {
 Add the generated SDK to your `go.mod`:
 
 ```
-require github.com/navidrome/navidrome/plugins/pdk/go v0.0.0
-replace github.com/navidrome/navidrome/plugins/pdk/go => ../../pdk/go
+require github.com/caplan/navidrome/plugins/pdk/go v0.0.0
+replace github.com/caplan/navidrome/plugins/pdk/go => ../../pdk/go
 ```
 
 Then import and use:
 
 ```go
-import "github.com/navidrome/navidrome/plugins/pdk/go/host"
+import "github.com/caplan/navidrome/plugins/pdk/go/host"
 
 // Schedule one-time task in 60 seconds
 scheduleID, err := host.SchedulerScheduleOneTime(60, "my-payload", "")
@@ -425,7 +425,7 @@ Store and retrieve data in an in-memory TTL-based cache. Each plugin has its own
 Import the Go SDK (see [Scheduler](#scheduler) for `go.mod` setup):
 
 ```go
-import "github.com/navidrome/navidrome/plugins/pdk/go/host"
+import "github.com/caplan/navidrome/plugins/pdk/go/host"
 
 // Cache a value for 1 hour
 host.CacheSetString("api-response", responseData, 3600)
@@ -479,7 +479,7 @@ Persistent key-value storage that survives server restarts. Each plugin has its 
 Import the Go SDK (see [Scheduler](#scheduler) for `go.mod` setup):
 
 ```go
-import "github.com/navidrome/navidrome/plugins/pdk/go/host"
+import "github.com/caplan/navidrome/plugins/pdk/go/host"
 
 // Store a value (as raw bytes)
 token := []byte(`{"access_token": "xyz", "refresh_token": "abc"}`)
@@ -609,7 +609,7 @@ entries, err := os.ReadDir("/libraries/1/Artist")
 Import the Go SDK (see [Scheduler](#scheduler) for `go.mod` setup). The `Library` struct is provided by the SDK:
 
 ```go
-import "github.com/navidrome/navidrome/plugins/pdk/go/host"
+import "github.com/caplan/navidrome/plugins/pdk/go/host"
 
 // Get a specific library
 resp, err := host.LibraryGetLibrary(1)
@@ -702,7 +702,7 @@ Access plugin configuration values programmatically. Unlike `pdk.GetConfig()` wh
 **Usage (with generated SDK):**
 
 ```go
-import "github.com/navidrome/navidrome/plugins/pdk/go/host"
+import "github.com/caplan/navidrome/plugins/pdk/go/host"
 
 // Get a string configuration value
 value, exists := host.ConfigGet("api_key")
@@ -765,7 +765,7 @@ If neither option is configured, the plugin cannot be enabled.
 **Usage (with generated SDK):**
 
 ```go
-import "github.com/navidrome/navidrome/plugins/pdk/go/host"
+import "github.com/caplan/navidrome/plugins/pdk/go/host"
 
 // Get all users the plugin has access to
 users, err := host.UsersGetUsers()
@@ -869,7 +869,7 @@ Navidrome provides type-safe Go packages for each capability in `plugins/pdk/go/
 package main
 
 import (
-    "github.com/navidrome/navidrome/plugins/pdk/go/metadata"
+    "github.com/caplan/navidrome/plugins/pdk/go/metadata"
 )
 
 type myPlugin struct{}
@@ -888,8 +888,8 @@ func main() {}
 Add to your `go.mod`:
 
 ```
-require github.com/navidrome/navidrome v0.0.0
-replace github.com/navidrome/navidrome => ../../..
+require github.com/caplan/navidrome v0.0.0
+replace github.com/caplan/navidrome => ../../..
 ```
 
 Available capability packages:
@@ -1003,14 +1003,14 @@ Generated SDKs for calling host services are in `plugins/pdk/go/`, `plugins/pdk/
 **For Go plugins:** Import the SDK as a Go module:
 
 ```go
-import "github.com/navidrome/navidrome/plugins/pdk/go/host"
+import "github.com/caplan/navidrome/plugins/pdk/go/host"
 ```
 
 Add to your `go.mod`:
 
 ```
-require github.com/navidrome/navidrome/plugins/pdk/go v0.0.0
-replace github.com/navidrome/navidrome/plugins/pdk/go => ../../pdk/go
+require github.com/caplan/navidrome/plugins/pdk/go v0.0.0
+replace github.com/caplan/navidrome/plugins/pdk/go => ../../pdk/go
 ```
 
 See [pdk/go/README.md](pdk/go/README.md) for detailed documentation.

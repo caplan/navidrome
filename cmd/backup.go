@@ -7,9 +7,9 @@ import (
 	"strings"
 	"time"
 
-	"github.com/navidrome/navidrome/conf"
-	"github.com/navidrome/navidrome/db"
-	"github.com/navidrome/navidrome/log"
+	"github.com/caplan/navidrome/conf"
+	"github.com/caplan/navidrome/db"
+	"github.com/caplan/navidrome/log"
 	"github.com/spf13/cobra"
 )
 

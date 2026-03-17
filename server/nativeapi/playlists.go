@@ -17,12 +17,12 @@ import (
 
 	"github.com/deluan/rest"
 	"github.com/go-chi/chi/v5"
-	"github.com/navidrome/navidrome/conf"
-	"github.com/navidrome/navidrome/core/playlists"
-	"github.com/navidrome/navidrome/log"
-	"github.com/navidrome/navidrome/model"
-	"github.com/navidrome/navidrome/model/request"
-	"github.com/navidrome/navidrome/utils/req"
+	"github.com/caplan/navidrome/conf"
+	"github.com/caplan/navidrome/core/playlists"
+	"github.com/caplan/navidrome/log"
+	"github.com/caplan/navidrome/model"
+	"github.com/caplan/navidrome/model/request"
+	"github.com/caplan/navidrome/utils/req"
 	_ "golang.org/x/image/webp"
 )
 

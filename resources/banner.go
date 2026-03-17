@@ -6,7 +6,7 @@ import (
 	"strings"
 	"unicode"
 
-	"github.com/navidrome/navidrome/consts"
+	"github.com/caplan/navidrome/consts"
 )
 
 func loadBanner() string {

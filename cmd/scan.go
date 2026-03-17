@@ -8,13 +8,13 @@ import (
 	"os"
 	"strings"
 
-	"github.com/navidrome/navidrome/core/playlists"
-	"github.com/navidrome/navidrome/db"
-	"github.com/navidrome/navidrome/log"
-	"github.com/navidrome/navidrome/model"
-	"github.com/navidrome/navidrome/persistence"
-	"github.com/navidrome/navidrome/scanner"
-	"github.com/navidrome/navidrome/utils/pl"
+	"github.com/caplan/navidrome/core/playlists"
+	"github.com/caplan/navidrome/db"
+	"github.com/caplan/navidrome/log"
+	"github.com/caplan/navidrome/model"
+	"github.com/caplan/navidrome/persistence"
+	"github.com/caplan/navidrome/scanner"
+	"github.com/caplan/navidrome/utils/pl"
 	"github.com/spf13/cobra"
 )
 

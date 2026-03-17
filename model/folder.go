@@ -9,7 +9,7 @@ import (
 	"strings"
 	"time"
 
-	"github.com/navidrome/navidrome/model/id"
+	"github.com/caplan/navidrome/model/id"
 )
 
 // Folder represents a folder in the library. Its path is relative to the library root.

@@ -3,8 +3,8 @@ package main
 import (
 	_ "net/http/pprof" //nolint:gosec
 
-	"github.com/navidrome/navidrome/cmd"
-	"github.com/navidrome/navidrome/conf/buildtags"
+	"github.com/caplan/navidrome/cmd"
+	"github.com/caplan/navidrome/conf/buildtags"
 )
 
 //goland:noinspection GoBoolExpressions

@@ -7,8 +7,8 @@ import (
 	"sync"
 	"time"
 
-	"github.com/navidrome/navidrome/conf"
-	"github.com/navidrome/navidrome/log"
+	"github.com/caplan/navidrome/conf"
+	"github.com/caplan/navidrome/log"
 	"github.com/rjeczalik/notify"
 )
 

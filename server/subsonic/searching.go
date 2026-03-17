@@ -10,12 +10,12 @@ import (
 
 	. "github.com/Masterminds/squirrel"
 	"github.com/deluan/sanitize"
-	"github.com/navidrome/navidrome/core/publicurl"
-	"github.com/navidrome/navidrome/log"
-	"github.com/navidrome/navidrome/model"
-	"github.com/navidrome/navidrome/server/subsonic/responses"
-	"github.com/navidrome/navidrome/utils/req"
-	"github.com/navidrome/navidrome/utils/slice"
+	"github.com/caplan/navidrome/core/publicurl"
+	"github.com/caplan/navidrome/log"
+	"github.com/caplan/navidrome/model"
+	"github.com/caplan/navidrome/server/subsonic/responses"
+	"github.com/caplan/navidrome/utils/req"
+	"github.com/caplan/navidrome/utils/slice"
 	"golang.org/x/sync/errgroup"
 )
 

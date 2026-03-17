@@ -7,9 +7,9 @@ import (
 	"time"
 
 	"github.com/lestrrat-go/jwx/v3/jwt"
-	"github.com/navidrome/navidrome/core/auth"
-	"github.com/navidrome/navidrome/log"
-	"github.com/navidrome/navidrome/model"
+	"github.com/caplan/navidrome/core/auth"
+	"github.com/caplan/navidrome/log"
+	"github.com/caplan/navidrome/model"
 )
 
 const tokenTTL = 48 * time.Hour

@@ -14,12 +14,12 @@ import (
 
 	"github.com/Masterminds/squirrel"
 	"github.com/maruel/natural"
-	"github.com/navidrome/navidrome/conf"
-	"github.com/navidrome/navidrome/core"
-	"github.com/navidrome/navidrome/core/external"
-	"github.com/navidrome/navidrome/core/ffmpeg"
-	"github.com/navidrome/navidrome/log"
-	"github.com/navidrome/navidrome/model"
+	"github.com/caplan/navidrome/conf"
+	"github.com/caplan/navidrome/core"
+	"github.com/caplan/navidrome/core/external"
+	"github.com/caplan/navidrome/core/ffmpeg"
+	"github.com/caplan/navidrome/log"
+	"github.com/caplan/navidrome/model"
 )
 
 type albumArtworkReader struct {

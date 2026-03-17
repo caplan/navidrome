@@ -6,8 +6,8 @@ import (
 	"os"
 	"path"
 
-	"github.com/navidrome/navidrome/conf"
-	"github.com/navidrome/navidrome/utils/merge"
+	"github.com/caplan/navidrome/conf"
+	"github.com/caplan/navidrome/utils/merge"
 )
 
 //go:embed *

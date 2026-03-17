@@ -10,9 +10,9 @@ import (
 	"slices"
 	"time"
 
-	"github.com/navidrome/navidrome/core/playlists"
-	"github.com/navidrome/navidrome/model"
-	"github.com/navidrome/navidrome/utils/chrono"
+	"github.com/caplan/navidrome/core/playlists"
+	"github.com/caplan/navidrome/model"
+	"github.com/caplan/navidrome/utils/chrono"
 )
 
 func newFolderEntry(job *scanJob, id, path string, updTime time.Time, hash string) *folderEntry {

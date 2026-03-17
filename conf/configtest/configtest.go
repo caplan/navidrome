@@ -1,6 +1,6 @@
 package configtest
 
-import "github.com/navidrome/navidrome/conf"
+import "github.com/caplan/navidrome/conf"
 
 func SetupConfig() func() {
 	oldValues := *conf.Server

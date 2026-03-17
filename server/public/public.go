@@ -6,16 +6,16 @@ import (
 
 	"github.com/go-chi/chi/v5"
 	"github.com/go-chi/chi/v5/middleware"
-	"github.com/navidrome/navidrome/conf"
-	"github.com/navidrome/navidrome/consts"
-	"github.com/navidrome/navidrome/core"
-	"github.com/navidrome/navidrome/core/artwork"
-	"github.com/navidrome/navidrome/core/publicurl"
-	"github.com/navidrome/navidrome/core/stream"
-	"github.com/navidrome/navidrome/log"
-	"github.com/navidrome/navidrome/model"
-	"github.com/navidrome/navidrome/server"
-	"github.com/navidrome/navidrome/ui"
+	"github.com/caplan/navidrome/conf"
+	"github.com/caplan/navidrome/consts"
+	"github.com/caplan/navidrome/core"
+	"github.com/caplan/navidrome/core/artwork"
+	"github.com/caplan/navidrome/core/publicurl"
+	"github.com/caplan/navidrome/core/stream"
+	"github.com/caplan/navidrome/log"
+	"github.com/caplan/navidrome/model"
+	"github.com/caplan/navidrome/server"
+	"github.com/caplan/navidrome/ui"
 )
 
 type Router struct {

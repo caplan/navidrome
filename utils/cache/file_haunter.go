@@ -6,7 +6,7 @@ import (
 
 	"github.com/djherbis/fscache"
 	"github.com/dustin/go-humanize"
-	"github.com/navidrome/navidrome/log"
+	"github.com/caplan/navidrome/log"
 )
 
 type haunterKV struct {

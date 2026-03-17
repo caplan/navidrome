@@ -7,7 +7,7 @@ import (
 
 	. "github.com/Masterminds/squirrel"
 	"github.com/deluan/rest"
-	"github.com/navidrome/navidrome/model"
+	"github.com/caplan/navidrome/model"
 	"github.com/pocketbase/dbx"
 )
 

@@ -6,8 +6,8 @@ import (
 	"errors"
 	"io"
 
-	"github.com/navidrome/navidrome/core/ffmpeg"
-	"github.com/navidrome/navidrome/tests"
+	"github.com/caplan/navidrome/core/ffmpeg"
+	"github.com/caplan/navidrome/tests"
 	. "github.com/onsi/ginkgo/v2"
 	. "github.com/onsi/gomega"
 )

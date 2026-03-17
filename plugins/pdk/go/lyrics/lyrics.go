@@ -8,7 +8,7 @@
 package lyrics
 
 import (
-	"github.com/navidrome/navidrome/plugins/pdk/go/pdk"
+	"github.com/caplan/navidrome/plugins/pdk/go/pdk"
 )
 
 // ArtistRef is a reference to an artist with name and optional MBID.

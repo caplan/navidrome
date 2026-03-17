@@ -8,8 +8,8 @@ import (
 	"unicode/utf8"
 
 	. "github.com/Masterminds/squirrel"
-	"github.com/navidrome/navidrome/log"
-	"github.com/navidrome/navidrome/model"
+	"github.com/caplan/navidrome/log"
+	"github.com/caplan/navidrome/model"
 )
 
 // containsCJK returns true if the string contains any CJK (Chinese/Japanese/Korean) characters.

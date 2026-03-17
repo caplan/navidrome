@@ -6,8 +6,8 @@ import (
 	"errors"
 	"strconv"
 
-	"github.com/navidrome/navidrome/plugins/pdk/go/metadata"
-	"github.com/navidrome/navidrome/plugins/pdk/go/pdk"
+	"github.com/caplan/navidrome/plugins/pdk/go/metadata"
+	"github.com/caplan/navidrome/plugins/pdk/go/pdk"
 )
 
 func init() {

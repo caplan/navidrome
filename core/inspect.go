@@ -3,11 +3,11 @@ package core
 import (
 	"path/filepath"
 
-	"github.com/navidrome/navidrome/core/storage"
-	"github.com/navidrome/navidrome/log"
-	"github.com/navidrome/navidrome/model"
-	"github.com/navidrome/navidrome/model/metadata"
-	. "github.com/navidrome/navidrome/utils/gg"
+	"github.com/caplan/navidrome/core/storage"
+	"github.com/caplan/navidrome/log"
+	"github.com/caplan/navidrome/model"
+	"github.com/caplan/navidrome/model/metadata"
+	. "github.com/caplan/navidrome/utils/gg"
 )
 
 type InspectOutput struct {

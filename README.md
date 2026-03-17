@@ -2,9 +2,9 @@
 
 # Navidrome Music Server &nbsp;[![Tweet](https://img.shields.io/twitter/url/http/shields.io.svg?style=social)](https://twitter.com/intent/tweet?text=Tired%20of%20paying%20for%20music%20subscriptions%2C%20and%20not%20finding%20what%20you%20really%20like%3F%20Roll%20your%20own%20streaming%20service%21&url=https://navidrome.org&via=navidrome)
 
-[![Last Release](https://img.shields.io/github/v/release/navidrome/navidrome?logo=github&label=latest&style=flat-square)](https://github.com/navidrome/navidrome/releases)
-[![Build](https://img.shields.io/github/actions/workflow/status/navidrome/navidrome/pipeline.yml?branch=master&logo=github&style=flat-square)](https://nightly.link/navidrome/navidrome/workflows/pipeline/master)
-[![Downloads](https://img.shields.io/github/downloads/navidrome/navidrome/total?logo=github&style=flat-square)](https://github.com/navidrome/navidrome/releases/latest)
+[![Last Release](https://img.shields.io/github/v/release/caplan/navidrome?logo=github&label=latest&style=flat-square)](https://github.com/caplan/navidrome/releases)
+[![Build](https://img.shields.io/github/actions/workflow/status/caplan/navidrome/pipeline.yml?branch=master&logo=github&style=flat-square)](https://nightly.link/caplan/navidrome/workflows/pipeline/master)
+[![Downloads](https://img.shields.io/github/downloads/caplan/navidrome/total?logo=github&style=flat-square)](https://github.com/caplan/navidrome/releases/latest)
 [![Docker Pulls](https://img.shields.io/docker/pulls/deluan/navidrome?logo=docker&label=pulls&style=flat-square)](https://hub.docker.com/r/deluan/navidrome)
 [![Dev Chat](https://img.shields.io/discord/671335427726114836?logo=discord&label=discord&style=flat-square)](https://discord.gg/xh7j7yF)
 [![Subreddit](https://img.shields.io/reddit/subreddit-subscribers/navidrome?logo=reddit&label=/r/navidrome&style=flat-square)](https://www.reddit.com/r/navidrome/)
@@ -16,13 +16,13 @@ music collection from any browser or mobile device. It's like your personal Spot
 
 
 **Note**: The `master` branch may be in an unstable or even broken state during development. 
-Please use [releases](https://github.com/navidrome/navidrome/releases) instead of 
+Please use [releases](https://github.com/caplan/navidrome/releases) instead of 
 the `master` branch in order to get a stable set of binaries.
 
 ## [Check out our Live Demo!](https://www.navidrome.org/demo/)
 
 __Any feedback is welcome!__ If you need/want a new feature, find a bug or think of any way to improve Navidrome, 
-please file a [GitHub issue](https://github.com/navidrome/navidrome/issues) or join the discussion in our 
+please file a [GitHub issue](https://github.com/caplan/navidrome/issues) or join the discussion in our 
 [Subreddit](https://www.reddit.com/r/navidrome/). If you want to contribute to the project in any other way 
 ([ui/backend dev](https://www.navidrome.org/docs/developers/), 
 [translations](https://www.navidrome.org/docs/developers/translations/), 
@@ -84,8 +84,8 @@ Here are some useful direct links:
 ## Screenshots
 
 <p align="left">
-    <img height="550" src="https://raw.githubusercontent.com/navidrome/navidrome/master/.github/screenshots/ss-mobile-login.png">
-    <img height="550" src="https://raw.githubusercontent.com/navidrome/navidrome/master/.github/screenshots/ss-mobile-player.png">
-    <img height="550" src="https://raw.githubusercontent.com/navidrome/navidrome/master/.github/screenshots/ss-mobile-album-view.png">
-    <img width="550" src="https://raw.githubusercontent.com/navidrome/navidrome/master/.github/screenshots/ss-desktop-player.png">
+    <img height="550" src="https://raw.githubusercontent.com/caplan/navidrome/master/.github/screenshots/ss-mobile-login.png">
+    <img height="550" src="https://raw.githubusercontent.com/caplan/navidrome/master/.github/screenshots/ss-mobile-player.png">
+    <img height="550" src="https://raw.githubusercontent.com/caplan/navidrome/master/.github/screenshots/ss-mobile-album-view.png">
+    <img width="550" src="https://raw.githubusercontent.com/caplan/navidrome/master/.github/screenshots/ss-desktop-player.png">
 </p>

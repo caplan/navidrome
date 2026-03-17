@@ -6,15 +6,15 @@ import (
 	"net/http"
 	"path"
 
-	"github.com/navidrome/navidrome/consts"
-	"github.com/navidrome/navidrome/core/auth"
-	"github.com/navidrome/navidrome/core/publicurl"
-	"github.com/navidrome/navidrome/log"
-	"github.com/navidrome/navidrome/model"
-	"github.com/navidrome/navidrome/server"
-	"github.com/navidrome/navidrome/ui"
-	. "github.com/navidrome/navidrome/utils/gg"
-	"github.com/navidrome/navidrome/utils/req"
+	"github.com/caplan/navidrome/consts"
+	"github.com/caplan/navidrome/core/auth"
+	"github.com/caplan/navidrome/core/publicurl"
+	"github.com/caplan/navidrome/log"
+	"github.com/caplan/navidrome/model"
+	"github.com/caplan/navidrome/server"
+	"github.com/caplan/navidrome/ui"
+	. "github.com/caplan/navidrome/utils/gg"
+	"github.com/caplan/navidrome/utils/req"
 )
 
 func (pub *Router) handleShares(w http.ResponseWriter, r *http.Request) {

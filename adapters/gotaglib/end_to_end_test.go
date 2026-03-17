@@ -6,9 +6,9 @@ import (
 	"time"
 
 	"github.com/djherbis/times"
-	"github.com/navidrome/navidrome/model"
-	"github.com/navidrome/navidrome/model/metadata"
-	"github.com/navidrome/navidrome/utils/gg"
+	"github.com/caplan/navidrome/model"
+	"github.com/caplan/navidrome/model/metadata"
+	"github.com/caplan/navidrome/utils/gg"
 	. "github.com/onsi/ginkgo/v2"
 	. "github.com/onsi/gomega"
 )

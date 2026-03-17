@@ -6,10 +6,10 @@ import (
 	"reflect"
 	"time"
 
-	"github.com/navidrome/navidrome/db"
-	"github.com/navidrome/navidrome/log"
-	"github.com/navidrome/navidrome/model"
-	"github.com/navidrome/navidrome/utils/run"
+	"github.com/caplan/navidrome/db"
+	"github.com/caplan/navidrome/log"
+	"github.com/caplan/navidrome/model"
+	"github.com/caplan/navidrome/utils/run"
 	"github.com/pocketbase/dbx"
 )
 

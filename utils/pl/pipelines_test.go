@@ -7,7 +7,7 @@ import (
 	"testing"
 	"time"
 
-	"github.com/navidrome/navidrome/utils/pl"
+	"github.com/caplan/navidrome/utils/pl"
 	. "github.com/onsi/ginkgo/v2"
 	. "github.com/onsi/gomega"
 )

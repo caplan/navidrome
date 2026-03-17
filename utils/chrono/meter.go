@@ -3,7 +3,7 @@ package chrono
 import (
 	"time"
 
-	. "github.com/navidrome/navidrome/utils/gg"
+	. "github.com/caplan/navidrome/utils/gg"
 )
 
 // Meter is a simple stopwatch

@@ -6,13 +6,13 @@ import (
 	"net/http"
 	"time"
 
-	"github.com/navidrome/navidrome/core/scrobbler"
-	"github.com/navidrome/navidrome/log"
-	"github.com/navidrome/navidrome/model"
-	"github.com/navidrome/navidrome/model/request"
-	"github.com/navidrome/navidrome/server/events"
-	"github.com/navidrome/navidrome/server/subsonic/responses"
-	"github.com/navidrome/navidrome/utils/req"
+	"github.com/caplan/navidrome/core/scrobbler"
+	"github.com/caplan/navidrome/log"
+	"github.com/caplan/navidrome/model"
+	"github.com/caplan/navidrome/model/request"
+	"github.com/caplan/navidrome/server/events"
+	"github.com/caplan/navidrome/server/subsonic/responses"
+	"github.com/caplan/navidrome/utils/req"
 )
 
 func (api *Router) SetRating(r *http.Request) (*responses.Subsonic, error) {

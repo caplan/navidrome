@@ -6,7 +6,7 @@ import (
 	"strings"
 
 	"github.com/Masterminds/squirrel"
-	"github.com/navidrome/navidrome/log"
+	"github.com/caplan/navidrome/log"
 )
 
 // JoinType is a bitmask indicating which additional JOINs are needed by a smart playlist expression.

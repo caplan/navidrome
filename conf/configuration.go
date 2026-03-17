@@ -14,9 +14,9 @@ import (
 	"github.com/bmatcuk/doublestar/v4"
 	"github.com/go-viper/encoding/ini"
 	"github.com/kr/pretty"
-	"github.com/navidrome/navidrome/consts"
-	"github.com/navidrome/navidrome/log"
-	"github.com/navidrome/navidrome/utils/run"
+	"github.com/caplan/navidrome/consts"
+	"github.com/caplan/navidrome/log"
+	"github.com/caplan/navidrome/utils/run"
 	"github.com/robfig/cron/v3"
 	"github.com/spf13/viper"
 )

@@ -8,13 +8,13 @@ import (
 	"strconv"
 	"strings"
 
-	"github.com/navidrome/navidrome/conf"
-	"github.com/navidrome/navidrome/core/stream"
-	"github.com/navidrome/navidrome/log"
-	"github.com/navidrome/navidrome/model"
-	"github.com/navidrome/navidrome/model/request"
-	"github.com/navidrome/navidrome/server/subsonic/responses"
-	"github.com/navidrome/navidrome/utils/req"
+	"github.com/caplan/navidrome/conf"
+	"github.com/caplan/navidrome/core/stream"
+	"github.com/caplan/navidrome/log"
+	"github.com/caplan/navidrome/model"
+	"github.com/caplan/navidrome/model/request"
+	"github.com/caplan/navidrome/server/subsonic/responses"
+	"github.com/caplan/navidrome/utils/req"
 )
 
 func (api *Router) serveStream(ctx context.Context, w http.ResponseWriter, r *http.Request, stream *stream.Stream, id string) {

@@ -8,7 +8,7 @@
 package scrobbler
 
 import (
-	"github.com/navidrome/navidrome/plugins/pdk/go/pdk"
+	"github.com/caplan/navidrome/plugins/pdk/go/pdk"
 )
 
 // ScrobblerError represents an error type for scrobbling operations.

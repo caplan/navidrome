@@ -6,12 +6,12 @@ import (
 	"fmt"
 	"os"
 
-	"github.com/navidrome/navidrome/conf"
-	"github.com/navidrome/navidrome/conf/configtest"
-	"github.com/navidrome/navidrome/core/lyrics"
-	"github.com/navidrome/navidrome/model"
-	"github.com/navidrome/navidrome/utils"
-	"github.com/navidrome/navidrome/utils/gg"
+	"github.com/caplan/navidrome/conf"
+	"github.com/caplan/navidrome/conf/configtest"
+	"github.com/caplan/navidrome/core/lyrics"
+	"github.com/caplan/navidrome/model"
+	"github.com/caplan/navidrome/utils"
+	"github.com/caplan/navidrome/utils/gg"
 	. "github.com/onsi/ginkgo/v2"
 	. "github.com/onsi/gomega"
 )

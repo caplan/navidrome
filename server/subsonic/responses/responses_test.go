@@ -10,10 +10,10 @@ import (
 	"encoding/xml"
 	"time"
 
-	"github.com/navidrome/navidrome/consts"
-	"github.com/navidrome/navidrome/server/subsonic/responses"
-	. "github.com/navidrome/navidrome/server/subsonic/responses"
-	"github.com/navidrome/navidrome/utils/gg"
+	"github.com/caplan/navidrome/consts"
+	"github.com/caplan/navidrome/server/subsonic/responses"
+	. "github.com/caplan/navidrome/server/subsonic/responses"
+	"github.com/caplan/navidrome/utils/gg"
 	. "github.com/onsi/ginkgo/v2"
 	. "github.com/onsi/gomega"
 )

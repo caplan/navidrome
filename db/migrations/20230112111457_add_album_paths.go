@@ -7,8 +7,8 @@ import (
 	"slices"
 	"strings"
 
-	"github.com/navidrome/navidrome/consts"
-	"github.com/navidrome/navidrome/log"
+	"github.com/caplan/navidrome/consts"
+	"github.com/caplan/navidrome/log"
 	"github.com/pressly/goose/v3"
 )
 

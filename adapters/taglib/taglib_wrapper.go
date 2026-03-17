@@ -23,7 +23,7 @@ import (
 	"sync/atomic"
 	"unsafe"
 
-	"github.com/navidrome/navidrome/log"
+	"github.com/caplan/navidrome/log"
 )
 
 const iTunesKeyPrefix = "----:com.apple.itunes:"

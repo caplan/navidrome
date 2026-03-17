@@ -5,8 +5,8 @@ import (
 	"errors"
 	"time"
 
-	"github.com/navidrome/navidrome/log"
-	"github.com/navidrome/navidrome/model"
+	"github.com/caplan/navidrome/log"
+	"github.com/caplan/navidrome/model"
 )
 
 // Loader is a function that loads a scrobbler by name.

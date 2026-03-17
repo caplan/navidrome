@@ -11,8 +11,8 @@ import (
 	"sync"
 
 	"github.com/kballard/go-shellquote"
-	"github.com/navidrome/navidrome/conf"
-	"github.com/navidrome/navidrome/log"
+	"github.com/caplan/navidrome/conf"
+	"github.com/caplan/navidrome/log"
 )
 
 func start(ctx context.Context, args []string) (Executor, error) {

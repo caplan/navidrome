@@ -6,11 +6,11 @@ import (
 	"io"
 	"time"
 
-	"github.com/navidrome/navidrome/conf"
-	"github.com/navidrome/navidrome/consts"
-	"github.com/navidrome/navidrome/model"
-	"github.com/navidrome/navidrome/utils/cache"
-	"github.com/navidrome/navidrome/utils/singleton"
+	"github.com/caplan/navidrome/conf"
+	"github.com/caplan/navidrome/consts"
+	"github.com/caplan/navidrome/model"
+	"github.com/caplan/navidrome/utils/cache"
+	"github.com/caplan/navidrome/utils/singleton"
 )
 
 type cacheKey struct {

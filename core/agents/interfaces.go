@@ -4,7 +4,7 @@ import (
 	"context"
 	"errors"
 
-	"github.com/navidrome/navidrome/model"
+	"github.com/caplan/navidrome/model"
 )
 
 type Constructor func(ds model.DataStore) Interface

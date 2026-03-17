@@ -5,12 +5,12 @@ import (
 	"errors"
 	"fmt"
 
-	"github.com/navidrome/navidrome/core/auth"
-	"github.com/navidrome/navidrome/db"
-	"github.com/navidrome/navidrome/log"
-	"github.com/navidrome/navidrome/model"
-	"github.com/navidrome/navidrome/model/request"
-	"github.com/navidrome/navidrome/persistence"
+	"github.com/caplan/navidrome/core/auth"
+	"github.com/caplan/navidrome/db"
+	"github.com/caplan/navidrome/log"
+	"github.com/caplan/navidrome/model"
+	"github.com/caplan/navidrome/model/request"
+	"github.com/caplan/navidrome/persistence"
 )
 
 func getAdminContext(ctx context.Context) (model.DataStore, context.Context) {

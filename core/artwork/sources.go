@@ -15,12 +15,12 @@ import (
 	"strings"
 	"time"
 
-	"github.com/navidrome/navidrome/consts"
-	"github.com/navidrome/navidrome/core/external"
-	"github.com/navidrome/navidrome/core/ffmpeg"
-	"github.com/navidrome/navidrome/log"
-	"github.com/navidrome/navidrome/model"
-	"github.com/navidrome/navidrome/resources"
+	"github.com/caplan/navidrome/consts"
+	"github.com/caplan/navidrome/core/external"
+	"github.com/caplan/navidrome/core/ffmpeg"
+	"github.com/caplan/navidrome/log"
+	"github.com/caplan/navidrome/model"
+	"github.com/caplan/navidrome/resources"
 	"go.senan.xyz/taglib"
 )
 
@@ -45,7 +45,7 @@ type sourceFunc func() (r io.ReadCloser, path string, err error)
 
 func (f sourceFunc) String() string {
 	name := runtime.FuncForPC(reflect.ValueOf(f).Pointer()).Name()
-	name = strings.TrimPrefix(name, "github.com/navidrome/navidrome/core/artwork.")
+	name = strings.TrimPrefix(name, "github.com/caplan/navidrome/core/artwork.")
 	if _, after, found := strings.Cut(name, ")."); found {
 		name = after
 	}

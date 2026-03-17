@@ -9,12 +9,12 @@ import (
 	"time"
 
 	ppl "github.com/google/go-pipeline/pkg/pipeline"
-	"github.com/navidrome/navidrome/conf"
-	"github.com/navidrome/navidrome/core/artwork"
-	"github.com/navidrome/navidrome/core/playlists"
-	"github.com/navidrome/navidrome/log"
-	"github.com/navidrome/navidrome/model"
-	"github.com/navidrome/navidrome/model/request"
+	"github.com/caplan/navidrome/conf"
+	"github.com/caplan/navidrome/core/artwork"
+	"github.com/caplan/navidrome/core/playlists"
+	"github.com/caplan/navidrome/log"
+	"github.com/caplan/navidrome/model"
+	"github.com/caplan/navidrome/model/request"
 )
 
 type phasePlaylists struct {

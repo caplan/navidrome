@@ -10,7 +10,7 @@ import (
 	"strings"
 	"time"
 
-	"github.com/navidrome/navidrome/plugins/host"
+	"github.com/caplan/navidrome/plugins/host"
 	. "github.com/onsi/ginkgo/v2"
 	. "github.com/onsi/gomega"
 )

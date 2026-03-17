@@ -8,12 +8,12 @@ import (
 	"net/http"
 	"time"
 
-	"github.com/navidrome/navidrome/consts"
-	"github.com/navidrome/navidrome/log"
-	"github.com/navidrome/navidrome/model/id"
-	"github.com/navidrome/navidrome/model/request"
-	"github.com/navidrome/navidrome/utils/pl"
-	"github.com/navidrome/navidrome/utils/singleton"
+	"github.com/caplan/navidrome/consts"
+	"github.com/caplan/navidrome/log"
+	"github.com/caplan/navidrome/model/id"
+	"github.com/caplan/navidrome/model/request"
+	"github.com/caplan/navidrome/utils/pl"
+	"github.com/caplan/navidrome/utils/singleton"
 )
 
 type Broker interface {

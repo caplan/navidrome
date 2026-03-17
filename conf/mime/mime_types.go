@@ -4,9 +4,9 @@ import (
 	"mime"
 	"strings"
 
-	"github.com/navidrome/navidrome/conf"
-	"github.com/navidrome/navidrome/log"
-	"github.com/navidrome/navidrome/resources"
+	"github.com/caplan/navidrome/conf"
+	"github.com/caplan/navidrome/log"
+	"github.com/caplan/navidrome/resources"
 	"gopkg.in/yaml.v3"
 )
 

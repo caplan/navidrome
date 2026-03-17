@@ -7,9 +7,9 @@ import (
 
 	"github.com/Masterminds/squirrel"
 	"github.com/deluan/rest"
-	"github.com/navidrome/navidrome/model"
-	"github.com/navidrome/navidrome/model/id"
-	"github.com/navidrome/navidrome/model/request"
+	"github.com/caplan/navidrome/model"
+	"github.com/caplan/navidrome/model/id"
+	"github.com/caplan/navidrome/model/request"
 	. "github.com/onsi/ginkgo/v2"
 	. "github.com/onsi/gomega"
 )

@@ -3,7 +3,7 @@ package request
 import (
 	"context"
 
-	"github.com/navidrome/navidrome/model"
+	"github.com/caplan/navidrome/model"
 )
 
 type contextKey string

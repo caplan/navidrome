@@ -3,8 +3,8 @@ package persistence
 import (
 	"context"
 
-	"github.com/navidrome/navidrome/db"
-	"github.com/navidrome/navidrome/model"
+	"github.com/caplan/navidrome/db"
+	"github.com/caplan/navidrome/model"
 	. "github.com/onsi/ginkgo/v2"
 	. "github.com/onsi/gomega"
 )

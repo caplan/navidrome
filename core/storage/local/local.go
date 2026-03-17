@@ -10,10 +10,10 @@ import (
 	"time"
 
 	"github.com/djherbis/times"
-	"github.com/navidrome/navidrome/conf"
-	"github.com/navidrome/navidrome/core/storage"
-	"github.com/navidrome/navidrome/log"
-	"github.com/navidrome/navidrome/model/metadata"
+	"github.com/caplan/navidrome/conf"
+	"github.com/caplan/navidrome/core/storage"
+	"github.com/caplan/navidrome/log"
+	"github.com/caplan/navidrome/model/metadata"
 )
 
 // localStorage implements a Storage that reads the files from the local filesystem and uses registered extractors

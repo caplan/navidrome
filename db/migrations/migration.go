@@ -7,8 +7,8 @@ import (
 	"strings"
 	"sync"
 
-	"github.com/navidrome/navidrome/conf"
-	"github.com/navidrome/navidrome/consts"
+	"github.com/caplan/navidrome/conf"
+	"github.com/caplan/navidrome/consts"
 )
 
 // Use this in migrations that need to communicate something important (breaking changes, forced reindexes, etc...)

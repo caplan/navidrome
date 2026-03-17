@@ -6,7 +6,7 @@ import (
 	"path/filepath"
 	"strings"
 
-	"github.com/navidrome/navidrome/log"
+	"github.com/caplan/navidrome/log"
 	"github.com/rjeczalik/notify"
 )
 

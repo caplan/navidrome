@@ -3,8 +3,8 @@
 package main
 
 import (
-	"github.com/navidrome/navidrome/plugins/pdk/go/host"
-	"github.com/navidrome/navidrome/plugins/pdk/go/pdk"
+	"github.com/caplan/navidrome/plugins/pdk/go/host"
+	"github.com/caplan/navidrome/plugins/pdk/go/pdk"
 )
 
 // TestCacheInput is the input for nd_test_cache callback.

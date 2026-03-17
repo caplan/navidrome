@@ -8,12 +8,12 @@ import (
 	"github.com/Masterminds/squirrel"
 	"github.com/deluan/rest"
 	gonanoid "github.com/matoous/go-nanoid/v2"
-	"github.com/navidrome/navidrome/conf"
-	"github.com/navidrome/navidrome/log"
-	"github.com/navidrome/navidrome/model"
-	. "github.com/navidrome/navidrome/utils/gg"
-	"github.com/navidrome/navidrome/utils/slice"
-	"github.com/navidrome/navidrome/utils/str"
+	"github.com/caplan/navidrome/conf"
+	"github.com/caplan/navidrome/log"
+	"github.com/caplan/navidrome/model"
+	. "github.com/caplan/navidrome/utils/gg"
+	"github.com/caplan/navidrome/utils/slice"
+	"github.com/caplan/navidrome/utils/str"
 )
 
 type Share interface {

@@ -4,10 +4,10 @@ import (
 	"context"
 	"strings"
 
-	"github.com/navidrome/navidrome/core/scrobbler"
-	"github.com/navidrome/navidrome/model"
-	"github.com/navidrome/navidrome/model/request"
-	"github.com/navidrome/navidrome/plugins/capabilities"
+	"github.com/caplan/navidrome/core/scrobbler"
+	"github.com/caplan/navidrome/model"
+	"github.com/caplan/navidrome/model/request"
+	"github.com/caplan/navidrome/plugins/capabilities"
 )
 
 // CapabilityScrobbler indicates the plugin can receive scrobble events.

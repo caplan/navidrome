@@ -5,7 +5,7 @@ import (
 	"database/sql"
 	"strings"
 
-	"github.com/navidrome/navidrome/log"
+	"github.com/caplan/navidrome/log"
 	"github.com/pressly/goose/v3"
 )
 

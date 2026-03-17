@@ -5,7 +5,7 @@ import (
 	"strings"
 	"time"
 
-	"github.com/navidrome/navidrome/utils/random"
+	"github.com/caplan/navidrome/utils/random"
 )
 
 type Share struct {

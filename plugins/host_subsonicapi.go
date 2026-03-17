@@ -9,10 +9,10 @@ import (
 	"net/url"
 	"path"
 
-	"github.com/navidrome/navidrome/log"
-	"github.com/navidrome/navidrome/model"
-	"github.com/navidrome/navidrome/model/request"
-	"github.com/navidrome/navidrome/plugins/host"
+	"github.com/caplan/navidrome/log"
+	"github.com/caplan/navidrome/model"
+	"github.com/caplan/navidrome/model/request"
+	"github.com/caplan/navidrome/plugins/host"
 )
 
 // subsonicAPIVersion is the Subsonic API version used for plugin calls.

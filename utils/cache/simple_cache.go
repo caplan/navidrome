@@ -9,7 +9,7 @@ import (
 	"time"
 
 	"github.com/jellydator/ttlcache/v3"
-	. "github.com/navidrome/navidrome/utils/gg"
+	. "github.com/caplan/navidrome/utils/gg"
 )
 
 type SimpleCache[K comparable, V any] interface {

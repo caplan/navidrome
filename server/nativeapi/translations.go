@@ -11,9 +11,9 @@ import (
 	"sync"
 
 	"github.com/deluan/rest"
-	"github.com/navidrome/navidrome/consts"
-	"github.com/navidrome/navidrome/log"
-	"github.com/navidrome/navidrome/resources"
+	"github.com/caplan/navidrome/consts"
+	"github.com/caplan/navidrome/log"
+	"github.com/caplan/navidrome/resources"
 )
 
 type translation struct {

@@ -110,8 +110,8 @@ RUN --mount=type=bind,source=. \
     fi
 
     go build -tags=netgo,sqlite_fts5 -ldflags="${LD_EXTRA} -w -s \
-        -X github.com/navidrome/navidrome/consts.gitSha=${GIT_SHA} \
-        -X github.com/navidrome/navidrome/consts.gitTag=${GIT_TAG}" \
+        -X github.com/caplan/navidrome/consts.gitSha=${GIT_SHA} \
+        -X github.com/caplan/navidrome/consts.gitTag=${GIT_TAG}" \
         -o /out/navidrome${EXT} .
 EOT
 
@@ -125,7 +125,7 @@ COPY --from=build /out /
 ### Build Final Image
 FROM public.ecr.aws/docker/library/alpine:3.20 AS final
 LABEL maintainer="deluan@navidrome.org"
-LABEL org.opencontainers.image.source="https://github.com/navidrome/navidrome"
+LABEL org.opencontainers.image.source="https://github.com/caplan/navidrome"
 
 # Install ffmpeg and mpv
 RUN apk add -U --no-cache ffmpeg mpv sqlite

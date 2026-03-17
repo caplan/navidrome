@@ -47,7 +47,7 @@ import (
 	"path/filepath"
 	"strings"
 
-	"github.com/navidrome/navidrome/plugins/cmd/ndpgen/internal"
+	"github.com/caplan/navidrome/plugins/cmd/ndpgen/internal"
 )
 
 // config holds the parsed command-line configuration.

@@ -4,8 +4,8 @@ import (
 	"context"
 	"path/filepath"
 
-	"github.com/navidrome/navidrome/model"
-	"github.com/navidrome/navidrome/model/request"
+	"github.com/caplan/navidrome/model"
+	"github.com/caplan/navidrome/model/request"
 )
 
 func userName(ctx context.Context) string {

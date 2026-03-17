@@ -5,8 +5,8 @@ import (
 	"path/filepath"
 	"time"
 
-	"github.com/navidrome/navidrome/model"
-	"github.com/navidrome/navidrome/model/id"
+	"github.com/caplan/navidrome/model"
+	"github.com/caplan/navidrome/model/id"
 	. "github.com/onsi/ginkgo/v2"
 	. "github.com/onsi/gomega"
 )

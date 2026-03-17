@@ -4,9 +4,9 @@ import (
 	"context"
 
 	"github.com/Masterminds/squirrel"
-	"github.com/navidrome/navidrome/model"
-	"github.com/navidrome/navidrome/model/request"
-	"github.com/navidrome/navidrome/utils/hasher"
+	"github.com/caplan/navidrome/model"
+	"github.com/caplan/navidrome/model/request"
+	"github.com/caplan/navidrome/utils/hasher"
 	. "github.com/onsi/ginkgo/v2"
 	. "github.com/onsi/gomega"
 )

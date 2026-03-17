@@ -7,7 +7,7 @@ import (
 	"strings"
 
 	gonanoid "github.com/matoous/go-nanoid/v2"
-	"github.com/navidrome/navidrome/log"
+	"github.com/caplan/navidrome/log"
 )
 
 func NewRandom() string {

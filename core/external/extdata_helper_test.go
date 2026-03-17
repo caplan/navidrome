@@ -4,8 +4,8 @@ import (
 	"context"
 	"errors"
 
-	"github.com/navidrome/navidrome/core/agents"
-	"github.com/navidrome/navidrome/model"
+	"github.com/caplan/navidrome/core/agents"
+	"github.com/caplan/navidrome/model"
 	"github.com/stretchr/testify/mock"
 )
 

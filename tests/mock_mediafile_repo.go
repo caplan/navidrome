@@ -8,9 +8,9 @@ import (
 	"time"
 
 	"github.com/deluan/rest"
-	"github.com/navidrome/navidrome/model"
-	"github.com/navidrome/navidrome/model/id"
-	"github.com/navidrome/navidrome/utils/slice"
+	"github.com/caplan/navidrome/model"
+	"github.com/caplan/navidrome/model/id"
+	"github.com/caplan/navidrome/utils/slice"
 )
 
 func CreateMockMediaFileRepo() *MockMediaFileRepo {

@@ -1,4 +1,4 @@
-module github.com/navidrome/navidrome/plugins/cmd/ndpgen
+module github.com/caplan/navidrome/plugins/cmd/ndpgen
 
 go 1.25
 

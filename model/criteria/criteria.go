@@ -8,7 +8,7 @@ import (
 	"strings"
 
 	"github.com/Masterminds/squirrel"
-	"github.com/navidrome/navidrome/log"
+	"github.com/caplan/navidrome/log"
 )
 
 type Expression = squirrel.Sqlizer
