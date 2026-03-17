@@ -510,9 +510,10 @@ type VisualizationType struct {
 }
 
 type VisualizationStatus struct {
-	Available  bool                `xml:"available,attr"                     json:"available"`
-	AcousticID string              `xml:"acousticId,attr,omitempty"          json:"acousticId,omitempty"`
-	Types      []VisualizationType `xml:"type,omitempty"                     json:"types,omitempty"`
+	Available   bool                `xml:"available,attr"                     json:"available"`
+	AcousticID  string              `xml:"acousticId,attr,omitempty"          json:"acousticId,omitempty"`
+	SpecVersion string              `xml:"specVersion,attr,omitempty"         json:"specVersion,omitempty"`
+	Types       []VisualizationType `xml:"type,omitempty"                     json:"types,omitempty"`
 }
 
 type Share struct {

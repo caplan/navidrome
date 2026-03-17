@@ -27,9 +27,10 @@ Navidrome has two API layers:
 - Subsonic: `getSpanTags`, `addSpanTag`, `getSpans`, `addSpan`, `deleteSpan`
 
 ### Visualizations
-- Native: `GET /api/song/{id}/visualizations` — JSON with availability per mode
-- Native: `GET /api/song/{id}/visualization/{mode}` — SVG download (mode: radio, blocky, ribbon, heatmap)
-- Subsonic: `getVisualizationStatus?id=<songId>` — availability with per-mode status
+- Native: `GET /api/song/{id}/visualizations` — JSON with availability per mode, specVersion, acousticId
+- Native: `GET /api/song/{id}/visualization/{mode}` — SVG download (mode: radio, blocky, ribbons, heatmap); serves latest version on disk
+- Subsonic: `getVisualizationStatus?id=<songId>` — availability with per-mode status and specVersion
+- SVGs are stored versioned on disk: `<DataFolder>/visualizations/<hash>/<version>/<mode>.svg`
 
 ## Adding Endpoints
 

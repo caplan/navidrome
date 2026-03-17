@@ -57,7 +57,7 @@ A share of the revenue helps fund the development of Navidrome at no additional 
  - **Transcoding** on the fly. Can be set per user/player. **Opus encoding is supported**
  - **Spans**: user-specific markers in songs with positions, tags, and metadata persistence
  - **Acoustic fingerprinting**: automatic Chromaprint fingerprint calculation for all songs
- - **Song visualizations**: auto-generated SVG visualizations (radio, blocky, ribbon, heatmap) for every song
+ - **Song visualizations**: auto-generated, versioned SVG visualizations (radio, blocky, ribbons, heatmap) for every song, automatically regenerated when the visualization library is upgraded
  - Translated to **various languages**
 
 ## Translations

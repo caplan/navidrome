@@ -88,7 +88,7 @@ make format                      # Format code (goimports + prettier)
 Background jobs are started in `cmd/root.go` via `errgroup`. Each is a function returning `func() error`:
 
 - **Acoustic ID processor** (`core/acousticid/`): Calculates Chromaprint fingerprints using `fpcalc`. Runs at startup (30s delay) then every 5 minutes. Processes 50 files per batch.
-- **Visualization generator** (`core/visualization/`): Generates 4 SVG types per song using `songviz`. Runs at startup (60s delay) then every 5 minutes. Processes 10 files per batch. Keyed by SHA-256 hash of acoustic fingerprint — metadata changes don't trigger regeneration.
+- **Visualization generator** (`core/visualization/`): Generates 4 SVG types per song using `songviz`. Runs at startup (60s delay) then every 5 minutes. Processes 10 files per batch. Keyed by SHA-256 hash of acoustic fingerprint — metadata changes don't trigger regeneration. SVGs are versioned by the songviz module version (`SpecVersion`, auto-detected from `go.mod`). When the library is upgraded, old visualizations are regenerated at lower priority (missing songs first, then upgrades). Old version directories are deleted after the new version is generated.
 - Both skip processing during active library scans.
 
 ### Commit Conventions

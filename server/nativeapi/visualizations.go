@@ -19,9 +19,10 @@ func (api *Router) addVisualizationRoute(r chi.Router) {
 }
 
 type vizStatus struct {
-	Available      bool              `json:"available"`
-	AcousticID     string            `json:"acousticId,omitempty"`
-	Visualizations map[string]bool   `json:"visualizations"`
+	Available      bool            `json:"available"`
+	AcousticID     string          `json:"acousticId,omitempty"`
+	SpecVersion    string          `json:"specVersion"`
+	Visualizations map[string]bool `json:"visualizations"`
 }
 
 func getVisualizationStatus(ds model.DataStore) http.HandlerFunc {
@@ -36,6 +37,7 @@ func getVisualizationStatus(ds model.DataStore) http.HandlerFunc {
 		}
 
 		status := vizStatus{
+			SpecVersion:    visualization.SpecVersion,
 			Visualizations: make(map[string]bool, len(visualization.Modes)),
 		}
 

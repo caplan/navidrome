@@ -22,6 +22,12 @@ github.com/bradleyjkemp/cupaloy/v2 v2.8.0 h1:any4BmKE+jGIaMpnU8YgH/I2LPiLBufr6oM
 github.com/bradleyjkemp/cupaloy/v2 v2.8.0/go.mod h1:bm7JXdkRd4BHJk9HpwqAI8BoAY1lps46Enkdqw6aRX0=
 github.com/caplan/music-visualizer/go v0.1.0 h1:uVFMgT8jF+ssMdna/yL1IHkr5/tejzeDgjqif3rI+LU=
 github.com/caplan/music-visualizer/go v0.1.0/go.mod h1:dEAVOvdMt8s7WmS39P6AjnQksTC/wcC8aWnMcHFNeXk=
+github.com/caplan/music-visualizer/go v0.1.1-0.20260317000441-9d60f38c8c07 h1:x/gOVXI5VADMjECX/CPhbBx+9cXTyTjrDr4mI2Hqma8=
+github.com/caplan/music-visualizer/go v0.1.1-0.20260317000441-9d60f38c8c07/go.mod h1:dEAVOvdMt8s7WmS39P6AjnQksTC/wcC8aWnMcHFNeXk=
+github.com/caplan/music-visualizer/go v0.2.0 h1:hIDtNXYK51DPGZ5TDFwfyhzvb5DvqdviPUiGfeR+3NE=
+github.com/caplan/music-visualizer/go v0.2.0/go.mod h1:dEAVOvdMt8s7WmS39P6AjnQksTC/wcC8aWnMcHFNeXk=
+github.com/caplan/music-visualizer/go v0.3.0 h1:EPf6fDonazwCgXifIXhflSak4Qegd4ePU1xqBYbxzXU=
+github.com/caplan/music-visualizer/go v0.3.0/go.mod h1:dEAVOvdMt8s7WmS39P6AjnQksTC/wcC8aWnMcHFNeXk=
 github.com/cespare/reflex v0.3.1 h1:N4Y/UmRrjwOkNT0oQQnYsdr6YBxvHqtSfPB4mqOyAKk=
 github.com/cespare/reflex v0.3.1/go.mod h1:I+0Pnu2W693i7Hv6ZZG76qHTY0mgUa7uCIfCtikXojE=
 github.com/cespare/xxhash/v2 v2.3.0 h1:UL815xU9SqsFlibzuggzjXhog7bL6oX9BbNZnL2UFvs=

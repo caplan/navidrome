@@ -23,7 +23,8 @@ func (api *Router) GetVisualizationStatus(r *http.Request) (*responses.Subsonic,
 	}
 
 	status := responses.VisualizationStatus{
-		Available: false,
+		Available:   false,
+		SpecVersion: visualization.SpecVersion,
 	}
 
 	if mf.AcousticID != "" {
