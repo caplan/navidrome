@@ -2,6 +2,7 @@ package acousticid
 
 import (
 	"context"
+	"bytes"
 	"encoding/json"
 	"fmt"
 	"os/exec"
@@ -110,10 +111,13 @@ func Calculate(filePath string) (string, error) {
 	}
 
 	cmd := exec.Command(fpcalcPath, "-json", filePath)
-	output, err := cmd.Output()
-	if err != nil {
+	var stdout bytes.Buffer
+	cmd.Stdout = &stdout
+	err := cmd.Run()
+	if err != nil && stdout.Len() == 0 {
 		return "", fmt.Errorf("running fpcalc: %w", err)
 	}
+	output := stdout.Bytes()
 
 	var result fpcalcResult
 	if err := json.Unmarshal(output, &result); err != nil {
